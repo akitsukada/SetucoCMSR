@@ -1,0 +1,2 @@
+class DefaultParentController < ApplicationController
+end

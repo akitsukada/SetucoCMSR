@@ -1,4 +1,4 @@
-class Default::IndexController < ApplicationController
+class Default::IndexController < DefaultParentController
   def index
   end
 
