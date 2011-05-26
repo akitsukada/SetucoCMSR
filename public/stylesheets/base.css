@@ -1,0 +1,892 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------/
+/ Theme Name: SetucoCMS                                         /
+/ Author: ErinaMikami with SetucoCMS Project                    /
+---------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/*    reset style                                             */
+/*------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: 0;
+    vertical-align: bottom;
+}
+ul li {
+    list-style: none;
+}
+
+/*------------------------------------------------------------*/
+/*    base style                                              */
+/*------------------------------------------------------------*/
+html {
+    overflow-y: scroll;
+}
+body {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 80%;
+    color: #535c5c;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/*------------------------------------------------------------*/
+/*    common style                                            */
+/*------------------------------------------------------------*/
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+form {
+    zoom: 1;
+}
+input {
+    padding: 2px;
+}
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: pre-wrap;      /* CSS3 */
+    word-wrap: break-word;      /* IE 5.5+ */
+}
+.clear {
+    clear:both;
+}
+/* -- 空き、幅、調整用 -- */
+.default {
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+.defaultOver {
+    margin: 20px 15px;
+}
+input.defaultInput {
+    width: 15em;
+}
+/* -- シマシマ背景用 -- */
+.check {
+    background-color: #f1faff;
+}
+/* -- 横並びdl -- */
+dl.straight {
+    zoom: 100%
+}
+dl.straight dt {
+    float:left;
+    clear: left;
+}
+dl.straight dd {
+    background: url(../images/admin/share/bg_dlLine.gif) no-repeat left center;
+    padding-left: 10px;
+    zoom: 1;
+    margin-left: 8em;
+}
+/* -- 横並びinput -- */
+.inputStraight {
+    zoom: 100%;
+}
+.inputStraight input {
+    float: left;
+    margin-right: 25px;
+}
+/* -- 必須テキスト -- */
+span.required {
+    color: #dd0000;
+    padding-right: 5px;
+    font-weight: bold;
+}
+/* -- 注意メッセージ -- */
+span.attentionMessage {
+    font-size: 80%;
+    color: #dd0000;
+    padding-left: 5px;
+    font-weight: normal !important;
+}
+noscript span.attentionMessage {
+    font-size: 100%;
+    padding-left: 0;
+    font-weight: bold !important;
+}
+
+/*------------------------------------------------------------*/
+/*    link style                                              */
+/*------------------------------------------------------------*/
+a:link, a:visited {
+    color: #535c5c;
+}
+a:hover, a:active {
+    color: #ffa200;
+}
+a:hover img {
+    filter: Alpha(opacity=80%);
+    opacity: 0.8;
+}
+
+/*------------------------------------------------------------*/
+/*    clearfix style                                          */
+/*------------------------------------------------------------*/
+div#container div#header:after ,
+div#container div#content:after ,
+div.hArea:after ,
+div#mainContent div.section:after ,
+div#topicSection dl:after ,
+dl#designs:after ,
+div#mainContent div.hAreaText:after ,
+div#mainContent dl.contentsList:after ,
+div#topicPath:after ,
+div.messageArea:after ,
+div.errorMessageArea:after ,
+dl.editArea:after ,
+div#pageNav ul:after ,
+.inputStraight:after,
+ul#directory li div:after ,
+div#pageSearch dl:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0.1px;
+    font-size: 0.1em;
+    line-height: 0;
+    clear: both;
+}
+
+/*------------------------------------------------------------*/
+/*    container style                                         */
+/*------------------------------------------------------------*/
+div#container {
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+    min-width: 750px;
+}
+
+/*------------------------------------------------------------*/
+/*    header style                                            */
+/*------------------------------------------------------------*/
+div#container div#header {
+    position: relative;
+    margin-bottom: 15px;
+    zoom: 100%;
+}
+div#header div {
+    float: left;
+    width: auto;
+}
+div#header h1 {
+    line-height: 0;
+    margin-bottom: 13px;
+}
+div#header h1 a {
+    display: block;
+    width: 136px;
+    height: 33px;
+}
+div#header h1 a img {
+    vertical-align: top;
+}
+div#header h2 {
+    font-size: 190%;
+    font-weight: normal;
+    margin-right: 10px;
+    padding-left: 5px;
+}
+div#header h2 a span {
+    border-bottom: solid 1px #535c5c;
+}
+div#header h2 a:hover span {
+    border-bottom: solid 1px #ffa200;
+}
+div#header h2 a ,
+div#header h2 a:hover {
+    text-decoration: none;
+}
+div#header h2 a img {
+    vertical-align: top;
+    padding: 5px 0 0 10px;
+}
+div#header p {
+    float: left;
+    margin-top: 5px;
+}
+div#header ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    width: auto;
+}
+div#header ul li {
+    margin-bottom: 29px;
+    float: right;
+}
+div#header ul li#utilAccount ,
+div#header ul li#utilLogout {
+    padding-right: 15px;
+}
+div#header ul li#utilManual a ,
+div#header ul li#utilAccount span {
+    padding-left: 12px;
+}
+div#header ul li#utilManual a {
+    background: url(../images/admin/header/bg_manual.gif) no-repeat left center;
+}
+div#header ul li#utilAccount span {
+    background: url(../images/admin/header/bg_nowLogin.gif) no-repeat left center;
+    font-weight: bold;
+}
+div#header li#utilLogout a {
+    background: url(../images/admin/header/bg_logout.gif) no-repeat left center;
+    padding-left: 22px;
+}
+
+/*------------------------------------------------------------*/
+/*    content style                                           */
+/*------------------------------------------------------------*/
+div#container div#content {
+    background-color: #f1f1f1;
+    padding: 10px;
+    zoom: 100%;
+}
+
+/*------------------------------------------------------------*/
+/*    mainContent style                                       */
+/*------------------------------------------------------------*/
+div#content div#mainContent {
+    width: 100%;
+    float: right;
+}
+div#mainContent div#mainContentInner {
+    background: url(../images/admin/gNav/bg_borderLine.gif) repeat-y left;
+    margin-left: 160px;
+    padding-left: 12px;
+}
+
+/*------------------------------------------------------------*/
+/*    gNav style                                              */
+/*------------------------------------------------------------*/
+div #content ul#gNav {
+    background: url(../images/admin/gNav/bg_borderLine.gif) repeat-y right;
+    float: left;
+    padding-right: 12px;
+    width: 150px;
+    margin-right: -162px;
+}
+ul#gNav li {
+    margin-bottom: 15px;
+}
+ul#gNav li dl {
+    background-color: #fff;
+}
+ul#gNav li dl dd {
+    border-bottom: dashed 1px #d7d7d7;
+    padding-left: 8px;
+}
+ul#gNav li dl dd a {
+    background: url(../images/admin/gNav/bg_menuLink.gif) no-repeat left center;
+    padding: 8px 8px 8px 16px;
+    display: block;
+    width: auto;
+    height: auto;
+}
+ul#gNav li dl dd a:hover {
+    background: url(../images/admin/gNav/bg_menuLink_over.gif) no-repeat left center;
+}
+ul#gNav li dl dd#active {
+    background: #e4f6ff;
+}
+ul#gNav li dl dd#active a ,
+ul#gNav li dl dd#active a:hover {
+    background: url(../images/admin/gNav/bg_menuLink_act.gif) no-repeat left center;
+    font-weight:bold;
+    color:#5f5f5f;
+    text-decoration:none;
+}
+
+/*------------------------------------------------------------*/
+/*    copyright style                                         */
+/*------------------------------------------------------------*/
+p#copyright {
+    text-align: right;
+    margin: 10px 0;
+}
+
+/*------------------------------------------------------------*/
+/*    section style                                           */
+/*------------------------------------------------------------*/
+div#mainContent div.section {
+    background-color: #fff;
+    border: solid 1px #cfcfcf;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+    zoom: 100%;
+}
+
+/*------------------------------------------------------------*/
+/*    hArea style                                             */
+/*------------------------------------------------------------*/
+div.hAreaL {
+    background: url(../images/admin/share/bg_hArea_l.jpg) no-repeat left top;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    height: 38px;
+}
+div.hAreaR {
+    background: url(../images/admin/share/bg_hArea_r.jpg) no-repeat right top;
+    padding-right: 5px;
+    height: 38px;
+}
+div.hArea {
+    background: url(../images/admin/share/bg_hArea.jpg) repeat-x top;
+    padding: 9px 10px;
+    height: 38px;
+    zoom: 100%;
+}
+div.hArea h3 {
+    float: left;
+    font-size: 110%;
+    font-weight: normal;
+}
+div.hArea p {
+    float: right;
+    margin-top: 3px;
+}
+div.hArea p a {
+    background: url(../images/admin/share/bg_hLink.gif) no-repeat left center;
+    padding-left: 18px;
+}
+
+/*------------------------------------------------------------*/
+/*    hAreaText style                                             */
+/*------------------------------------------------------------*/
+div#mainContent div.hAreaText {
+    zoom: 100%;
+    border-bottom: solid 1px #5dc0e9;
+    margin: 0 10px 15px;
+    padding: 5px 5px 5px;
+}
+div#mainContent div.hAreaText h3 {
+    float: left;
+    background: url(../images/admin/share/bg_hAreaText.gif) no-repeat left center;
+    font-size: 120%;
+    font-weight: normal;
+    padding-left: 20px;
+}
+
+/*------------------------------------------------------------*/
+/*    topicPath style                                         */
+/*------------------------------------------------------------*/
+div#topicPath {
+    background-color: #fff;
+    border: solid 1px #cfcfcf;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    zoom: 100%;
+}
+div#topicPath p {
+    float: left;
+    font-size: 90%;
+    margin-right: 10px;
+}
+div#topicPath p img {
+    padding-left: 10px;
+    padding-bottom: 2px;
+}
+
+/*------------------------------------------------------------*/
+/*    messageArea style                                       */
+/*------------------------------------------------------------*/
+div.messageArea,
+div.errorMessageArea {
+    clear: both;
+    margin: 0 0 10px;
+    padding: 5px 15px;
+    zoom: 100%;
+}
+div.messageArea {
+    background-color: #fff0d6;
+    border: solid 1px #ffd68e;
+}
+div.errorMessageArea {
+    background-color: #ffe7de;
+    border: solid 1px #ff8988;
+}
+div.messageArea p ,
+div.errorMessageArea p {
+    float: left;
+    margin-right: 20px;
+}
+
+/*------------------------------------------------------------*/
+/*    pageNav style                                           */
+/*------------------------------------------------------------*/
+div#pageNav {
+    text-align: center;
+}
+div#pageNav ul {
+    margin: 0 auto;
+    zoom: 100%;
+}
+div#pageNav ul li {
+    display:inline;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+div#pageNav ul li.navNumber a ,
+div#pageNav ul li.current span {
+    background-color: #eaeaea;
+    padding: 4px 7px;
+    text-decoration: none;
+    border:solid 1px #dedede;
+}
+div#pageNav ul li.navNumber a:hover {
+    background-color: #f4f4f4;
+    border:solid 1px #dedede;
+}
+div#pageNav ul li.current span {
+    background-color: #dedede;
+    border:solid 1px #d0d0d0;
+    font-weight: bold;
+}
+
+/*------------------------------------------------------------*/
+/*    table style                                             */
+/*------------------------------------------------------------*/
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+thead tr {
+    height: 30px;
+}
+th {
+    background-color: #e8effe;
+    border: solid 1px #abcce5;
+    border-left: none;
+    font-weight: normal;
+    padding: 5px 5px 5px 10px;
+}
+th#tableFirst {
+    border-left: solid 1px #abcce5;
+}
+th img {
+    padding: 0 0 3px 3px;
+}
+td {
+    border-right: solid 1px #f6f6f6;
+    padding: 7px 5px 7px 15px;
+}
+td.thumb {
+    text-align: center;
+}
+td.thumb a {
+    display: block;
+}
+
+/*------------------------------------------------------------*/
+/*    dl#inputArea style                                      */
+/*------------------------------------------------------------*/
+dl#inputArea {
+    width: 70%;
+    max-width: 50em;
+    margin-left: 15px;
+}
+dl#inputArea dt {
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+dl#inputArea input {
+    font-size: 100%;
+    padding: 4px;
+    width: 100%;
+}
+dl#inputArea input.upSub {
+    width: auto;
+}
+
+/*------------------------------------------------------------*/
+/*    dl.editArea style                                       */
+/*------------------------------------------------------------*/
+dl.editArea {
+    margin-left: 5px;
+    width: 70%;
+    zoom: 100%
+}
+dl.editArea dt {
+    float:left;
+    clear: left;
+    background-color: #e8effe;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    width: 20%;
+    height: 3em;
+    display: block;
+}
+div#mainContent dl.editArea dd {
+    background: none;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    width: 60%;
+    height: 3em;
+}
+div#mainContent dl.editArea dd input {
+    padding: 4px;
+    width: 100%;
+}
+div#mainContent dl.editArea dd textarea {
+    margin-top: -2px;
+    padding: 4px;
+    font-size: 100%;
+    width: 100%;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- login only style --                                  */
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/*    loginBoard style                                        */
+/*------------------------------------------------------------*/
+body#loginBoad {
+    background-color: #f7f7f7;
+}
+body#loginBoad div#container {
+    background-color: #fff;
+    border: solid 1px #cfcfcf;
+    margin-top: 20px;
+    padding: 35px 30px 15px;
+    width: 300px;
+    min-width: 0;
+}
+* html body#loginBoad div#container {
+    width: 260px;
+}
+body#loginBoad div.messageArea {
+    margin-bottom: 30px;
+}
+body#loginBoad h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+body#loginBoad dt {
+    margin-bottom: 10px;
+}
+body#loginBoad dd {
+    background: url(../images/admin/share/bg_dlLine.gif) no-repeat 0 5px;
+    margin-left: 6em;
+    padding-left: 15px;
+    zoom: 1;
+}
+body#loginBoad dd input {
+    margin-bottom: 15px;
+    width: 200px;
+}
+body#loginBoad p input {
+    float: right;
+    margin-bottom: 30px;
+    padding: 2px 20px;
+}
+body#loginBoad p#copyright {
+    clear: right;
+    text-align: left;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- index only style --                                  */
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/*    nowData hArea  style                                    */
+/*------------------------------------------------------------*/
+div.nowData div.hAreaL {
+    background: url(../images/admin/index/bg_nowData_hArea_l.jpg) no-repeat left top;
+}
+div.nowData div.hAreaR {
+    background: url(../images/admin/index/bg_nowData_hArea_r.jpg) no-repeat right top;
+}
+div.nowData div.hArea {
+    background: url(../images/admin/index/bg_nowData_hArea.jpg) repeat-x top;
+}
+div.nowData div.hArea h3 {
+    margin-top: 2px;
+}
+div.nowData div.hArea p {
+    float: right;
+    margin-top: 3px;
+}
+div.nowData div.hArea p a {
+    background: url(../images/admin/index/bg_nowData_hLink.gif) no-repeat left center;
+    padding-left: 18px;
+}
+div.nowData dl dt ,
+div.nowData dl dd  {
+    padding: 5px 10px;
+}
+
+/*------------------------------------------------------------*/
+/*    ambitionEdit style                                      */
+/*------------------------------------------------------------*/
+span#ambitionEdit {
+    display: none;
+}
+
+/*------------------------------------------------------------*/
+/*    designs style                                           */
+/*------------------------------------------------------------*/
+dl#designs {
+    margin-left: 5px;
+    zoom: 100%
+}
+dl#designs dt ,
+dl#designs dd {
+    font-size: 120%;
+}
+dl#designs dt {
+    margin-right: 7px;
+    float:left;
+}
+dl#designs dd {
+    width: 70%;
+    background: url(../images/admin/share/bg_dlLine.gif) no-repeat left center;
+    padding-left: 10px;
+    zoom: 1;
+    margin-left: 2.5em;
+}
+dl#designs dd em {
+    margin-right: 5px;
+}
+dl#designs dd em input {
+    width: 70%;
+}
+
+/*------------------------------------------------------------*/
+/*    contentsList style                                      */
+/*------------------------------------------------------------*/
+div#mainContent dl.contentsList {
+    padding: 10px 15px;
+    zoom: 100%;
+}
+div#mainContent dl.contentsList dt ,
+div#mainContent dl.contentsList dd {
+    float: left;
+}
+div#mainContent dl.contentsList dt {
+    margin-right: 5px;
+}
+div#mainContent dl.contentsList dd {
+    margin-right: 20px;
+}
+div#mainContent dl.contentsList dt.pageDate {
+    float: none;
+    margin-bottom: 10px;
+}
+div#mainContent dl.contentsList dd.pageTitle {
+    float: none;
+    background: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- page only style --                                   */
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/*    pageSearch style                                        */
+/*------------------------------------------------------------*/
+div#pageSearch {
+    background-color: #f1faff;
+    margin-bottom:20px;
+    padding: 10px 17px;
+}
+div#pageSearch input {
+    vertical-align: top;
+}
+div#pageSearch dl {
+    zoom:100%;
+}
+div#pageSearch dt ,
+div#pageSearch dd {
+    float: left;
+}
+div#mainContent div#pageSearch dd {
+    background: none;
+    padding: 0 5px;
+}
+div#pageSearch dl.over dd {
+    font-size: 80%;
+}
+div#pageSearch dl.over dd input {
+    margin-bottom: 8px;
+    margin-right: 4px;
+}
+div#pageSearch dl.under {
+    margin-top: 12px;
+}
+div#pageSearch dl.under dd {
+    margin-right: 7px;
+}
+div#pageSearch p input {
+    margin-top:12px;
+    width:5em;
+}
+p.status_edit {
+    display: none;
+}
+p.category_edit {
+    display: none;
+}
+
+/*------------------------------------------------------------*/
+/*    PAGE CONTENT style                                      */
+/*------------------------------------------------------------*/
+#page_contents-Editor {
+    border: solid 1px #cfcfcf;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- directory only style --                              */
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/*    ul#directory style                                      */
+/*------------------------------------------------------------*/
+div.section ul#directory {
+    margin: 0 2px;
+}
+div.section ul#directory ul {
+    margin: 0;
+}
+div.section ul#directory ul li {
+    background: url("../images/admin/directory/bg_childLine.gif") no-repeat left center;
+    margin: 0 0 0 41px;
+    padding: 0 0 0 38px;
+}
+div.section ul#directory ul li.lastChild {
+    background: url("../images/admin/directory/bg_childLine_last.gif") no-repeat left center;
+}
+ul#directory li div {
+    padding: 3px 16px;
+    zoom:100%;
+}
+ul#directory li.page div {
+    padding: 1px 3px;
+}
+ul#directory li p {
+    margin-right: 10px;
+}
+ul#directory li.category p ,
+ul#directory li.page p {
+    float: left;
+}
+ul#directory li.category ul {
+    display: none;
+}
+ul#directory li.category p {
+    padding-top: 3px;
+}
+ul#directory li p.folder {
+    font-size: 110%;
+    padding-top: 0;
+    padding-right: 3px;
+}
+ul#directory li p.folder a {
+    text-decoration: none;
+}
+ul#directory li p img {
+    padding: 3px 5px 3px 0;
+}
+ul#directory li p.folder img {
+    padding: 3px 8px 3px 0;
+}
+ul#directory li ul li.page p {
+    margin-right: 8px;
+}
+ul#directory li ul li.page p img {
+    padding: 0 0 2px 3px;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- tag and category only style --                       */
+/*------------------------------------------------------------*/
+div.rowEdit {
+    display: none;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- media only style --                                  */
+/*------------------------------------------------------------*/
+p#upload_img1 {
+    padding-bottom:5px;
+}
+p#upload_img2,
+p#upload_img3,
+p#upload_img4,
+p#upload_img5 {
+    display: none;
+    padding-bottom:5px;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- site only style --                                   */
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/*    dl#siteForm style                                       */
+/*------------------------------------------------------------*/
+div#mainContent dl#siteForm dt {
+    height: 4em;
+}
+div#mainContent dl#siteForm dd {
+    height: 4em;
+}
+div#mainContent dl#siteForm dt span.attentionMessage {
+    padding-left: 0;
+}
+div#mainContent dl#siteForm dd span {
+    font-size: 80%;
+}
+div#mainContent dl#siteForm dt#site_description_t {
+    height: 6em;
+}
+div#mainContent dl#siteForm dd#site_description_d {
+    height: 6em;
+}
+
+
+/*------------------------------------------------------------*/
+/*    -- errorPage only style --                              */
+/*------------------------------------------------------------*/
+body#errorPage div#content div#mainContent {
+    float: none;
+}
+body#errorPage div#mainContent div#mainContentInner {
+    background: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+body#errorPage div.default {
+    padding-left: 10px;
+}
+body#errorPage div.default h3 {
+    color: #5DC0E9;
+}
+body#errorPage div.default h4 {
+    margin-top: 10px;
+}
+body#errorPage div.default p {
+    margin-top: 5px;
+}

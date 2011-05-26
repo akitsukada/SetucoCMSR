@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%# TODO: ページごとのサブタイトルを持ってくる %>SetucoCMSR</title>
+        <%= render :partial => "shared/html_header" %>
+        <%= stylesheet_link_tag 'style' %>
+        <%= javascript_include_tag :defaults %>
+        <%= csrf_meta_tag %>
+    </head>
+    <body>
+
+        <!-- wrapper START -->
+        <div id="wrapper">
+
+            <!-- header START -->
+            <div id="header_innerL">
+                <%#php echo $this->render('header.phtml'); %>
+            </div>
+            <!-- header END -->
+
+            <!-- content START -->
+            <div id="content">
+                <!-- mainContent START -->
+                <div id="mainContent">
+                </div>
+                <!-- mainContent END -->
+                <%= yield %>
+                <!-- subContent START -->
+                <div id="subContent">
+                    <%#php echo $this->render('navi.phtml') %>
+                </div>
+                <!-- subContent END -->
+            </div>
+            <!-- content END -->
+
+            <%#php echo $this->render('footer.phtml') %>
+
+        </div>
+        <!-- wrapper END -->
+
+    </body>
+</html>
