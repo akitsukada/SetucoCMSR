@@ -6,9 +6,10 @@ SetucoCMSR::Application.routes.draw do
   scope :module => 'default' do
     resources :index, :only => :index
     resources :categories, :only => :show
+    resources :tags, :only => :show
+    resources :pages, :only => :show
     get '/index(/index)' => 'index#index'
   end
-
 
   # default, ルート
   root :to => 'default/index#index'

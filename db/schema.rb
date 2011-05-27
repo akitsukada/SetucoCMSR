@@ -10,12 +10,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527085641) do
+ActiveRecord::Schema.define(:version => 20110527105046) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "login_id"
+    t.string   "nickname"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "contents"
+    t.text     "outline"
+    t.integer  "account_id"
+    t.boolean  "published"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages_tags", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "tag_id"
   end
 
   create_table "sites", :force => true do |t|
@@ -24,6 +48,12 @@ ActiveRecord::Schema.define(:version => 20110527085641) do
     t.text     "comment"
     t.string   "keyword"
     t.datetime "open_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

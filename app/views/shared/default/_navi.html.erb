@@ -4,12 +4,24 @@
     <div class="navList">
         <h3>カテゴリー</h3>
         <ul>
-            <% @categories.each do |cat| %>
+        <% @categories.each do |cat| %>
             <li>
-            <%= link_to cat.name, cat %>
-                <%# <span><?php echo $this->escape($category['name']) ?></span> %>
+                <% if cat.pages.length > 0 %>
+                <%= link_to(cat.name, cat) if cat.pages.length > 0 %>
+                <% else %>
+                <span>
+                <%= cat.name if cat.pages.length == 0 -%>
+                </span>
+                <% end %>
             </li>
+        <% end %>
+            <li>
+            <% if @uncategorized.length > 0 %>
+                <%= link_to '未分類', 'default/categories/0'  %>
+            <% else %>
+                <span>未分類</span>
             <% end %>
+            </li>
         </ul>
     </div>
     <!-- navList END -->
@@ -17,16 +29,17 @@
     <!-- navList START -->
     <div class="navList">
         <h3>タグクラウド</h3>
+        <% if @tags.count > 0 %>
         <ul id="tagCloud">
-            <li class="level1">
-                <a href="たぐ">タグ名</a>
+            <% @tags.each do |t| %>
+            <li class="level<%= t.level %>">
+                <%= link_to t.tag.name, t.tag %>
             </li>
+            <% end %>
         </ul>
-        <%#
-        <p>
-            タグは登録されていません。
-        </p>
-        %>
+        <% else %>
+        <p>タグは登録されていません。</p>
+        <% end %>
     </div>
     <!-- navList END -->
 </div>

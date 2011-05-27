@@ -3,12 +3,12 @@
 
     <div class="entryHead">
         <h2>
-        <span>フリースペース</span>
+        <span>SetucoCMSをRails3で作る</span>
         </h2>
     </div>
     <div class="entryBody">
         <p>
-            テスト運用中。フリーエリアです。
+            じっけんです。
         </p>
     </div>
 </div>
@@ -24,14 +24,17 @@
     </div>
     <div class="entryBody">
         <ul class="topics">
+            <%# TODO: パーシャル/Ajax化 %>
+            <% @pages.each do |p| %>
             <li>
-                <a href='ページshow'>pageタイトル</a>
+            <%#= link_to p.title, "default/page/#{p.id}" %>
+            <%= link_to p.title, p %>
             </li>
+            <% end %>
         </ul>
     </div>
     <p class="backTop">
         <a href="#wrapper">ページの先頭に戻る</a>
     </p>
-    ページねーた
 </div>
 <!-- entry END -->
