@@ -2,22 +2,20 @@
 <html>
     <head>
         <title><%# TODO: ページごとのサブタイトルを持ってくる %>SetucoCMSR</title>
-        <%= render :partial => "shared/html_header" %>
+        <%= render :partial => "shared/default/html_header" %>
         <%= stylesheet_link_tag 'style' %>
         <%= javascript_include_tag :defaults %>
         <%= csrf_meta_tag %>
     </head>
     <body>
-
         <!-- wrapper START -->
         <div id="wrapper">
-
             <!-- header START -->
             <div id="header_innerL">
+                <%= render :partial => 'shared/default/header' %>
                 <%#php echo $this->render('header.phtml'); %>
             </div>
             <!-- header END -->
-
             <!-- content START -->
             <div id="content">
                 <!-- mainContent START -->
@@ -27,16 +25,13 @@
                 <%= yield %>
                 <!-- subContent START -->
                 <div id="subContent">
-                    <%#php echo $this->render('navi.phtml') %>
+                    <%= render :partial => 'shared/default/navi' %>
                 </div>
                 <!-- subContent END -->
             </div>
             <!-- content END -->
-
-            <%#php echo $this->render('footer.phtml') %>
-
+            <%= render :partial => 'shared/default/footer' %>
         </div>
         <!-- wrapper END -->
-
     </body>
 </html>

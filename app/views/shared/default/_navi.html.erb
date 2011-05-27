@@ -1,0 +1,35 @@
+<!-- navArea START -->
+<div id="navArea">
+    <!-- navList START -->
+    <div class="navList">
+        <h3>カテゴリー</h3>
+        <ul>
+            <% ['cat1', 'cat2', 'cat3'].each do |c| %>
+            <li>
+                <%= link_to c %>
+                <%# <span><?php echo $this->escape($category['name']) ?></span> %>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+    <!-- navList END -->
+
+    <!-- navList START -->
+    <div class="navList">
+        <h3>タグクラウド</h3>
+        <ul id="tagCloud">
+            <li class="level1">
+                <a href="たぐ">タグ名</a>
+            </li>
+            <?php endforeach;?>
+        </ul>
+        <%#
+        <p>
+            タグは登録されていません。
+        </p>
+        %>
+    </div>
+    <!-- navList END -->
+</div>
+<!-- navArea END -->
+

@@ -1,3 +1,3 @@
 class DefaultParentController < ApplicationController
-  layout 'default'
+  layout 'default/default'
 end
