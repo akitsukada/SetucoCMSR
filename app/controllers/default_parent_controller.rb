@@ -7,8 +7,8 @@ class DefaultParentController < ApplicationController
     # author infomation from config(application.rb)
     @author = SetucoCMSR::Application.config.author
 
-      # version infomation from config(application.rb)
-      @version = SetucoCMSR::Application.config.version
+    # version infomation from config(application.rb)
+    @version = SetucoCMSR::Application.config.version
 
     # data from db
     @site = Site.find(1)
@@ -17,6 +17,7 @@ class DefaultParentController < ApplicationController
     @uncategorized = Page.uncategorized
     @tags = make_tag_cloud(PagesTag.counts_by_tag_id)
     @pages = Page.newer10
+
   end
 
   # タグクラウド関連のデータを取得

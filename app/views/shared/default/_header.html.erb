@@ -2,26 +2,24 @@
     <div id="header_inner">
         <div id="discript">
             <h1>
-            <a href="" tabindex="1"><%= @site.name %></a>
+                <%= link_to @site.name, '/', :tabindex => 1 %>
             </h1>
             <p>
             <%= @site.comment %>
             </p>
         </div>
-        <form action="サーチ" method="get">
+        <%= form_tag :controller => 'keyword', :action => 'search' do %>
             <dl>
                 <dt>
-                    <label for="keyword">
-                        フリーワード検索
-                    </label>
+                    <%= label_tag 'keyword', 'フリーワード検索' %>
                 </dt>
                 <dd>
-                    <input type="text" name="query" id="keyword" value="キーワード" tabindex="2" />
+                <%= text_field_tag 'keyword', @query, :name => 'query', :tabindex => 2 %>
                 </dd>
             </dl>
             <p>
                 <input type="submit" value="検索" tabindex="3" />
             </p>
-        </form>
+        <% end %>
     </div>
 </div>

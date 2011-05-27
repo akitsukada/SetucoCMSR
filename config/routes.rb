@@ -1,6 +1,8 @@
 SetucoCMSR::Application.routes.draw do
 
-  get "categories/show"
+  get "tags/show"
+
+  get "pages/show"
 
   # default, 閲覧側
   scope :module => 'default' do
@@ -9,6 +11,7 @@ SetucoCMSR::Application.routes.draw do
     resources :tags, :only => :show
     resources :pages, :only => :show
     get '/index(/index)' => 'index#index'
+    post '/search' => 'keyword#search'
   end
 
   # default, ルート

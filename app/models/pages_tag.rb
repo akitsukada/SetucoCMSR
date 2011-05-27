@@ -10,4 +10,5 @@ class PagesTag < ActiveRecord::Base
 
   attr_accessor :level
 
+
 end
