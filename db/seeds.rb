@@ -6,3 +6,9 @@ site = Site.create(
   :keyword => 'SetucoCMS,Ruby,Ruby on Rails,densetu,電設部',
   :open_date => Time.now
 )
+
+category = Category.create([
+  {:name => 'cat1'},
+  {:name => 'cat2'},
+  {:name => 'cat3'},
+])

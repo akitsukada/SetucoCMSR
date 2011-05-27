@@ -11,8 +11,12 @@ class DefaultParentController < ApplicationController
       # version infomation from config(application.rb)
       @version = SetucoCMSR::Application.config.version
 
-      # TODO : サイト情報をDBから持ってくる
+      # site data from db
       @site = Site.find(1)
       @start_year = @site.open_date.strftime('%Y')
+
+      # category data from db
+      @categories = Category.all
+
   end
 end

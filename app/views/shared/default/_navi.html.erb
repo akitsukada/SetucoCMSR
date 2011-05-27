@@ -4,9 +4,9 @@
     <div class="navList">
         <h3>カテゴリー</h3>
         <ul>
-            <% ['cat1', 'cat2', 'cat3'].each do |c| %>
+            <% @categories.each do |cat| %>
             <li>
-                <%= link_to c %>
+            <%= link_to cat.name, cat %>
                 <%# <span><?php echo $this->escape($category['name']) ?></span> %>
             </li>
             <% end %>
