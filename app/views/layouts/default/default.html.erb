@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%# TODO: ページごとのサブタイトルを持ってくる %>SetucoCMSR</title>
         <%= render :partial => "shared/default/html_header" %>
         <%= stylesheet_link_tag 'style' %>
         <%= javascript_include_tag :defaults %>
         <%= csrf_meta_tag %>
+        <title><%= @subtitle %>SetucoCMSR</title>
     </head>
     <body>
         <!-- wrapper START -->
@@ -20,9 +20,9 @@
             <div id="content">
                 <!-- mainContent START -->
                 <div id="mainContent">
+                    <%= yield %>
                 </div>
                 <!-- mainContent END -->
-                <%= yield %>
                 <!-- subContent START -->
                 <div id="subContent">
                     <%= render :partial => 'shared/default/navi' %>

@@ -45,5 +45,10 @@ module SetucoCMSR
       end
     end
 
+    # author information
+    config.author = 'akitsukada'
+    # Version information
+    config.version = '0.0.1'
+
   end
 end

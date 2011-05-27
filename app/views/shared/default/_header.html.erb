@@ -2,10 +2,10 @@
     <div id="header_inner">
         <div id="discript">
             <h1>
-            <a href="" tabindex="1"><%# TODO:サイト情報からサイト名 %></a>
+            <a href="" tabindex="1"><%= @site.name %></a>
             </h1>
             <p>
-                <%# TODO:サイト情報からコメント%>
+            <%= @site.comment %>
             </p>
         </div>
         <form action="サーチ" method="get">
