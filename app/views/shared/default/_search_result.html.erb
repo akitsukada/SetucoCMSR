@@ -1,0 +1,16 @@
+    <table>
+        <colgroup>
+            <col width="28%" />
+            <col width="62%" />
+        </colgroup>
+        <% @search_result.each do |res| %>
+        <tr>
+            <td>
+                <%= link_to highlight_keyword(res.title, @query), res %>
+            </td>
+            <td>
+                <%= highlight_keyword res.contents, @query %> （<%= l res.updated_at.localtime %>）
+            </td>
+        </tr>
+        <% end %>
+    </table>

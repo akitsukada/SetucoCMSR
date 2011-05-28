@@ -1,0 +1,12 @@
+<!-- entry START -->
+<div class="entry">
+    <div class="entryHead">
+        <h2><span>「<%= @query %>」の検索結果（<%= @search_result.count %>件）</span></h2>
+    </div>
+    <% if @search_result.count > 0 %>
+    <%= render 'shared/default/search_result' %>
+    <% else %>
+    <%= render 'shared/default/search_result_not_found' %>
+    <% end %>
+</div>
+<!-- entry END -->

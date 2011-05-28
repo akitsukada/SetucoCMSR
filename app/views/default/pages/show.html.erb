@@ -1,2 +1,30 @@
-<h1>Default::Pages#show</h1>
-<p>Find me in app/views/default/pages/show.html.erb</p>
+<!-- entry START -->
+<div class="entry">
+    <div class="entryHead">
+        <h2><span><%= @page.title %></span></h2>
+        <p><%= l @page.updated_at.localtime %></p>
+    </div>
+    <dl class="category">
+        <dt>カテゴリー：</dt>
+        <dd>
+            <%= link_to @page.category.name, @page.category %>
+        </dd>
+    </dl>
+    <div class="entryBody">
+        <%= @page.contents %>
+        <dl class="entryTag">
+            <dt>タグ：</dt>
+            <dd>
+            <% if @page.tags.length > 0 %>
+                <% @page.tags.each do |t| %>
+                <%= link_to t.name, t %>
+                <% end %>
+            <% else %>
+                なし
+            <% end %>
+            </dd>
+        </dl>
+    </div>
+    <p class="backTop"><a href="#wrapper">ページの先頭に戻る</a></p>
+</div>
+<!-- entry END -->

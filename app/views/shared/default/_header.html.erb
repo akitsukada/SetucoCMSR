@@ -14,7 +14,7 @@
                     <%= label_tag 'keyword', 'フリーワード検索' %>
                 </dt>
                 <dd>
-                <%= text_field_tag 'keyword', @query, :name => 'query', :tabindex => 2 %>
+                <%= text_field_tag 'keyword',(@query unless @tag), :name => 'query', :tabindex => 2 %>
                 </dd>
             </dl>
             <p>
