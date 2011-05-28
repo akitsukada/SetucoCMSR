@@ -5,6 +5,13 @@
 #  - Tsutomu Kuroda (t-kuroda@oiax.jp)
 
 ja:
+  views:
+    pagination:
+      first: "|<<"
+      last: ">>|"
+      previous: "前へ"
+      next: "次へ"
+      truncate: "..."
   date:
     formats:
       default: "%Y/%m/%d"

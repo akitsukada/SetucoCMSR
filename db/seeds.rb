@@ -71,79 +71,17 @@ page = Page.create ([
     :published => 't',
     :category_id => 1
   },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
-  {
-    :title => 'hoge',
-    :contents => 'hoge',
-    :outline => '概要ですo',
-    :account_id => 1,
-    :published => 't',
-    :category_id => 1
-  },
 ])
+50.times do |i|
+  page = Page.create(
+    :title => 'hoge',
+    :contents => 'hoge',
+    :outline => '概要ですo',
+    :account_id => 1,
+    :published => 't',
+    :category_id => 1
+  )
+end
 
 pt = PagesTag.create([
   {:page_id => 1, :tag_id => 1},
