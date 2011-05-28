@@ -11,7 +11,7 @@ SetucoCMSR::Application.routes.draw do
     resources :tags, :only => :show
     resources :pages, :only => :show
     get '/index(/index)' => 'index#index'
-    post '/search' => 'keyword#search'
+    get '/search' => 'keyword#search'
   end
 
   # default, ルート

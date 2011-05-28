@@ -8,7 +8,8 @@
     remote:        data-remote
 -%>
 <li class="navNumber<%= ' current' if page.current? %>">
-<%= link_to_unless(page.current?, page, url, opts = {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil}) do |name|
+<%= link_to_unless(page.current?,
+    page, url, opts = {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil}) do |name|
     raw "<span>#{page}</span>"
 end %>
 </li>

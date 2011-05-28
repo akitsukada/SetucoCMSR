@@ -191,6 +191,12 @@ div.entry p.backTop {
     margin-top: 15px;
     text-align: right;
 }
+div.entry table colgroup col.left {
+    width:28%;
+}
+div.entry table colgroup col.right {
+    width:62%;
+}
 div.entry table td {
     vertical-align: top;
 }
