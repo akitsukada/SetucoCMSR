@@ -11,10 +11,10 @@
         <%= form_tag({:controller => 'keyword', :action => 'search'}, {:method => 'get'}  ) do %>
             <dl>
                 <dt>
-                    <%= label_tag 'keyword', 'フリーワード検索' %>
+                <%= label_tag 'keyword', 'フリーワード検索', :class => 'updnWatermark' %>
                 </dt>
                 <dd>
-                <%= text_field_tag 'keyword',(@query unless @tag), :name => 'query', :tabindex => 2 %>
+                <%= text_field_tag 'keyword',(@query unless @tag), :name => 'query', :title => 'キーワードを入力してください', :tabindex => 2 %>
                 </dd>
             </dl>
             <p>
