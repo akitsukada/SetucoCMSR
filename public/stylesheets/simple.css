@@ -524,7 +524,7 @@ body#errorPage div#content div#mainContent div.entryBody p {
 .updnWatermark {
     color: #999;
     font-family: Sans-Serif;
-    font-size: small;
+    font-size: 95%;
     font-style: italic;
     padding: 2px;
 }　
