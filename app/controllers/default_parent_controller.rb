@@ -1,3 +1,4 @@
+# -*- coding:UTF-8 -*-
 class DefaultParentController < ApplicationController
   layout 'default/default'
   before_filter :loaddata_for_layout
