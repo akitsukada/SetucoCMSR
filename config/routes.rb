@@ -1,5 +1,7 @@
 SetucoCMSR::Application.routes.draw do
 
+  get "login/index"
+
   get "tags/show"
 
   get "pages/show"
