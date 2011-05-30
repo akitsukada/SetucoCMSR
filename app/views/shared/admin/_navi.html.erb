@@ -1,0 +1,22 @@
+<!-- gNav START -->
+<ul id="gNav">
+<% @navi['nav'].each do |key,value| %>
+    <li>
+    <% if value['id'] == 'index' %>
+    <%= link_to image_tag(value['src'], :alt => value['label'], :size => '150x30'), :controller => value['controller'], :action => value['action'] %>
+    <% else %>
+        <dl>
+            <dt>
+                <%= link_to image_tag(value['src'], :alt => value['label'], :size => '150x30'), :controller => value['controller'], :action => value['action'] %>
+            </dt>
+            <% value['pages'].each do |p,v| %>
+            <dd<%= " id='active'" if current_navi? v %>>
+              <%= link_to v['label'], :controller => v['controller'], :action => v['action'] %>
+            </dd>
+            <% end %>
+        </dl>
+    <% end %>
+    </li>
+<% end %>
+</ul>
+<!-- gNav END -->

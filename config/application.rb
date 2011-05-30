@@ -46,9 +46,12 @@ module SetucoCMSR
     end
 
     # author information
-    config.author = 'akitsukada'
+    config.author = 'AkihiroTsukada'
+    config.authors = 'ErinaMikami, AkihiroTsukada'
     # Version information
     config.version = '0.0.1'
+    # years information
+    config.years = '2010-2011'
 
   end
 end

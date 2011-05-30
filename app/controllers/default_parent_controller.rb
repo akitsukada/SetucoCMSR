@@ -1,9 +1,15 @@
 # -*- coding:UTF-8 -*-
 class DefaultParentController < ApplicationController
-  layout 'default/default'
+  layout 'default'
   before_filter :loaddata_for_layout
 
   private
+  # ページのタイトル設定
+  def set_subtitle(subtitle)
+    @subtitle = subtitle + " | "
+  end
+
+  # レイアウト部分のデータ準備
   def loaddata_for_layout
     # author infomation from config(application.rb)
     @author = SetucoCMSR::Application.config.author

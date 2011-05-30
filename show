@@ -1,0 +1,16 @@
+[1m[32m      create[0m  app/controllers/admin/pages_controller.rb
+[1m[32m       route[0m  get "pages/="
+[1m[32m       route[0m  get "pages/:except"
+[1m[37m      invoke[0m  erb
+[1m[32m      create[0m    app/views/admin/pages
+[1m[32m      create[0m    app/views/admin/pages/:except.html.erb
+[1m[32m      create[0m    app/views/admin/pages/=.html.erb
+[1m[37m      invoke[0m  rspec
+[1m[32m      create[0m    spec/controllers/admin/pages_controller_spec.rb
+[1m[32m      create[0m    spec/views/admin/pages
+[1m[32m      create[0m    spec/views/admin/pages/:except.html.erb_spec.rb
+[1m[32m      create[0m    spec/views/admin/pages/=.html.erb_spec.rb
+[1m[37m      invoke[0m  helper
+[1m[32m      create[0m    app/helpers/admin/pages_helper.rb
+[1m[37m      invoke[0m    rspec
+[1m[32m      create[0m      spec/helpers/admin/pages_helper_spec.rb

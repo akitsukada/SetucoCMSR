@@ -1,0 +1,20 @@
+<div>
+    <h1>
+        <%= link_to(image_tag('admin/header/logo.gif', :alt => 'せつこCMS', :size => '136x33'), '/admin', :title => '管理画面のトップに戻ります') %>
+    </h1>
+    <h2>
+        <% link_to @site.url do %>
+        <span><%= @site.name %></span>
+        <%= image_tag('admin/header/btn_watchSite.jpg', :alt => 'サイトを確認する', :size => '108x29') %>
+        <% end %>
+    </h2>
+</div>
+
+<ul>
+    <li id="utilLogout">
+        <%= link_to 'ログアウト', :controller => 'admin/login', :action => 'logout' %>
+    </li>
+    <li id="utilAccount">
+    <span><%= @login_user %></span>でログイン中
+    </li>
+</ul>

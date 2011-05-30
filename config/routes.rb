@@ -1,11 +1,5 @@
 SetucoCMSR::Application.routes.draw do
 
-  get "login/index"
-
-  get "tags/show"
-
-  get "pages/show"
-
   # default, 閲覧側
   scope :module => 'default' do
     resources :index, :only => :index
@@ -14,8 +8,21 @@ SetucoCMSR::Application.routes.draw do
     resources :pages, :only => :show
     get '/index(/index)' => 'index#index'
     get '/search' => 'keyword#search'
+    root :to => 'index#index'
   end
 
-  # default, ルート
-  root :to => 'default/index#index'
+  # admin, 管理側
+  namespace 'admin' do
+    resources :index, :only => :index
+    resources :pages
+    resources :directories, :only => :index
+    resources :categories, :only => [:index, :create, :update, :destroy]
+    resources :tags, :only => [:index, :create, :update, :destroy]
+    resources :medias, :except => :show
+    resource :site, :only => [:edit, :update]
+    resource :account
+    get '/logout' => 'login#logout'
+    root :to => 'index#index'
+  end
+
 end

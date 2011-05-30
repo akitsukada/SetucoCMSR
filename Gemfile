@@ -8,6 +8,8 @@ gem 'rails', '3.0.7'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'devise'
+gem 'nokogiri'
 #gem 'will_paginate', '3.0.pre2'
 
 # Use unicorn as the web server

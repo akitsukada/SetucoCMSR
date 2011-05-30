@@ -7,7 +7,7 @@
         <%= javascript_include_tag 'shared/jquery.updnWatermark.js' %>
         <%= javascript_include_tag 'shared/keyword.js' %>
         <%= csrf_meta_tag %>
-        <title><%= @subtitle + " | " if @subtitle %>SetucoCMSR</title>
+        <title><%= @subtitle if @subtitle %>SetucoCMSR</title>
     </head>
     <body>
         <!-- wrapper START -->
@@ -15,7 +15,6 @@
             <!-- header START -->
             <div id="header_innerL">
                 <%= render :partial => 'shared/default/header' %>
-                <%#php echo $this->render('header.phtml'); %>
             </div>
             <!-- header END -->
             <!-- content START -->

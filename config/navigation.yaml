@@ -1,0 +1,159 @@
+nav:
+  index:
+    id: index
+    title: トップ
+    label: トップページ
+    module: admin
+    controller: index
+    action: index
+    order: -10
+    type: Setuco_Navigation_Page
+    src: admin/gNav/btn_menu_top.jpg
+    pages:
+      index:
+        id: index_index
+        visible: 0
+        title: トップ
+        module: admin
+        controller: index
+        action: index
+      goal:
+        id: index_form-goal
+        visible: 0
+        title: 更新目標の編集
+        module: admin
+        controller: index
+        action: form-goal
+  page:
+    id: page
+    title: ページの編集・削除
+    label: ページ
+    module: admin
+    controller: pages
+    action: index
+    order: 0
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_page.jpg
+    pages:
+      new:
+        id: page_form
+        title: ページの新規作成
+        label: 新規作成
+        module: admin
+        controller: pages
+        action: new
+      index:
+        id: page_index
+        title: ページの編集・削除
+        label: 編集・削除
+        module: admin
+        controller: pages
+        action: index
+  directory:
+    id: directory
+    title: サイト構造（カテゴリー・ページの一覧）
+    label: サイト構造
+    module: admin
+    controller: directories
+    action: index
+    order: 10
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_directory.jpg
+    pages:
+      index:
+        id: directory_index
+        title: サイト構造（カテゴリー・ページの一覧）
+        label: カテゴリー・ページの一覧
+        module: admin
+        controller: directories
+        action: index
+  category:
+    id: category
+    title: カテゴリーの追加・編集・削除
+    label: カテゴリー
+    module: admin
+    controller: categories
+    action: index
+    order: 20
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_category.jpg
+    pages:
+      index:
+        id: category_index
+        title: カテゴリーの追加・編集・削除
+        label: 追加・編集・削除
+        module: admin
+        controller: categories
+        action: index
+  tag:
+    id: tag
+    title: タグの追加・編集・削除
+    label: タグ
+    module: admin
+    controller: tags
+    action: index
+    order: 30
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_tag.jpg
+    pages:
+      index:
+        id: tag_index
+        title: タグの追加・編集・削除
+        label: 追加・編集・削除
+        module: admin
+        controller: tags
+        action: index
+  media:
+    id: media
+    title: ファイルの追加・編集・削除
+    label: ファイル
+    module: admin
+    controller: medias
+    action: index
+    order: 40
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_file.jpg
+    pages:
+      index:
+        id: media_index
+        title: ファイルの追加・編集・削除
+        label: 追加・編集・削除
+        module: admin
+        controller: medias
+        action: index
+  site:
+    id: site
+    title: サイト情報の編集
+    label: サイト全般
+    module: admin
+    controller: sites
+    action: edit
+    order: 50
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_site.jpg
+    pages:
+      edit:
+        id: site_index
+        title: サイト情報の編集
+        label: サイト情報の編集
+        module: admin
+        controller: sites
+        action: edit
+  account:
+    id: account
+    title: マイアカウントの編集
+    label: アカウント
+    module: admin
+    controller: accounts
+    action: edit
+    order: 60
+    type: Setuco_Navigation_Page
+    src: admin/gNav/h_menu_account.jpg
+    pages:
+      edit:
+        id: account_index
+        title: マイアカウントの編集
+        label: マイアカウントの編集
+        module: admin
+        controller: accounts
+        action: edit
