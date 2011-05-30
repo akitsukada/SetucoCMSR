@@ -14,13 +14,15 @@ SetucoCMSR::Application.routes.draw do
   # admin, 管理側
   namespace 'admin' do
     resources :index, :only => :index
-    resources :pages
+    resources :pages, :except => :show
     resources :directories, :only => :index
     resources :categories, :only => [:index, :create, :update, :destroy]
     resources :tags, :only => [:index, :create, :update, :destroy]
     resources :medias, :except => :show
     resource :site, :only => [:edit, :update]
     resource :account
+    resource :ambition, :only => :update
+    resource :goal, :only => [:edit, :update]
     get '/logout' => 'login#logout'
     root :to => 'index#index'
   end

@@ -1,6 +1,6 @@
 <!-- gNav START -->
 <ul id="gNav">
-<% @navi['nav'].each do |key,value| %>
+<% @navi['ja'].each do |key,value| %>
     <li>
     <% if value['id'] == 'index' %>
     <%= link_to image_tag(value['src'], :alt => value['label'], :size => '150x30'), :controller => value['controller'], :action => value['action'] %>

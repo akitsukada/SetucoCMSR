@@ -5,6 +5,26 @@
 #  - Tsutomu Kuroda (t-kuroda@oiax.jp)
 
 ja:
+
+  status:
+    good:
+      image: "admin/index/status_good.jpg"
+      word: "すごい！最高！！！"
+    normal:
+      image: "admin/index/status_good.jpg"
+      word: "いい調子！"
+    bad:
+      image: "admin/index/status_good.jpg"
+      word: "がんばって！"
+    beginning_of_month:
+      image: "admin/index/status_good.jpg"
+      word: "今月もがんばろう"
+
+  diff:
+    equal: '目標達成！'
+    minus: '目標まであと%{count}ページ！'
+    plus: '目標からプラス%{count}ページ！'
+
   views:
     pagination:
       first: "|<<"

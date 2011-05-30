@@ -1,2 +1,94 @@
-<h1>Admin::Index#index</h1>
-<p>Find me in app/views/admin/index/index.html.erb</p>
+<!-- section"野望" START -->
+<div class="section">
+    <%= render :partial => 'shared/admin/error_message' if @error_message %>
+    <%= form_for @ambition, :url => :admin_ambition, :method => :put do |f| %>
+        <dl id="designs">
+            <dt>
+                <%= f.label :ambition, '野望' %>
+            </dt>
+            <dd>
+                <span id="ambitionView">
+                    <em>「<%= @ambition.ambition %>」</em>
+                    <%= link_to(image_tag('admin/index/btn_ambition_edit.gif', :alt => '野望を変更する', :size => '21x21'), :onclick => '# TODO:実装') %>
+                </span>
+                <span id="ambitionEdit">
+                    <em><%= f.text_field :ambition %></em>
+                    <%= f.submit '保存', :disable_with => '更新中...' %>
+                    <%= f.submit 'キャンセル', :type => 'button' %>
+                </span>
+            </dd>
+        </dl>
+    <% end %>
+</div>
+<!-- section"野望" END -->
+
+<!-- section"現在の状況" START -->
+<div class="section nowData">
+    <div class="hAreaL">
+        <div class="hAreaR">
+            <div class="hArea">
+                <h3>
+                    <%= image_tag 'admin/index/h_nowData.jpg', :alt => '現在の状況', :size => '112x22' %>
+                </h3>
+                <p>
+                    <%= link_to '更新目標の編集', :controller => 'goals', :action => 'edit' %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <dl class="straight">
+        <dt>更新状況</dt>
+        <dd>
+        <%#= image_tag @update_status['image'], :alt => @update_status['word'], :size => '270x140' %>
+        <%= image_tag t("status.#{@update_status}.image"), :alt => t("status.#{@update_status}.word"), :size => '270x140' %>
+
+    </dl>
+    <dl class="straight check">
+        <dt>今月の作成数</dt>
+        <dd><%= @update_count %>ページ（<%= t("diff.#{@diff_status}", :count => @diff_count) %>）</dd>
+    </dl>
+    <dl class="straight">
+        <dt>総ページ数</dt>
+        <dd><%= @total_count %>ページ</dd>
+    </dl>
+    <dl class="straight check">
+        <dt>最終更新日時</dt>
+        <dd><%= l @last_update %>（<%= @past_days_from_update %>日経過）</dd>
+    </dl>
+    <dl class="straight">
+        <dt>経過日数</dt>
+        <dd><%= @past_days_from_open %>日目（<%= l @open_date %> 開設）</dd>
+    </dl>
+</div>
+<!-- section"現在の状況" END -->
+
+<!-- section"最近作ったページ" START -->
+<div class="section">
+    <div class="hAreaL">
+        <div class="hAreaR">
+            <div class="hArea">
+                <h3 id="recentry">
+                    <%= image_tag 'admin/index/h_recentlyPage.jpg', :alt => '最近作ったページ', :size => '194x23' %>
+                </h3>
+                <p>
+                    <%= link_to 'ページの一覧（編集・削除）へ', :controller => :pages, :action => :index %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% @recent_pages.each do |page| %>
+    <dl class="contentsList<%= cycle '',' check' %>">
+        <dt class="pageDate"><%= l page.created_date %></dt>
+        <dd class="pageTitle">
+        <%= link_to page.title, :controller => :pages, :action => :edit, :id => page.id  %>
+        </dd>
+        <dt>カテゴリー</dt>
+        <dd><%= page.category.name %></dd>
+        <dt>制作者</dt>
+        <dd><%= page.account.nickname %></dd>
+        <dt>公開状態</dt>
+        <dd><%= page.published ? '公開' : '下書き' %></dd>
+    </dl>
+    <% end %>
+</div>
+<!-- section"最近作ったページ" END -->

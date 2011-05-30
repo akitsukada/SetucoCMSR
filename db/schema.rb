@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527105046) do
+ActiveRecord::Schema.define(:version => 20110530173327) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login_id"
@@ -20,8 +20,21 @@ ActiveRecord::Schema.define(:version => 20110527105046) do
     t.datetime "updated_at"
   end
 
+  create_table "ambitions", :force => true do |t|
+    t.string   "ambition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goals", :force => true do |t|
+    t.integer  "page_count"
+    t.date     "target_month"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110527105046) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "created_date"
   end
 
   create_table "pages_tags", :id => false, :force => true do |t|

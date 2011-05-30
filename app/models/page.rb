@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
   belongs_to :account
   belongs_to :category
 
-  scope :newer10, where(:published => 't').order('updated_at desc').limit(10)
+  scope :newer10, where(:published => true).order('created_date desc').limit(10)
   scope :uncategorized, where(:category_id => nil)
   scope :default_keyword_search, lambda { |key|
     where("published = 't' and " +
@@ -13,5 +13,8 @@ class Page < ActiveRecord::Base
           "%" + key + "%", "%" + key + "%", "%" + key + "%", "%" + key + "%"
          )
   }
+  scope :updates_of_this_month,
+    where(:published => true)
+    .where(:updated_at => Time.now.localtime.beginning_of_month..(1.month.since.beginning_of_month - 1.second))
 
 end

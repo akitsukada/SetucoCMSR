@@ -3,7 +3,7 @@
         <%= link_to(image_tag('admin/header/logo.gif', :alt => 'せつこCMS', :size => '136x33'), '/admin', :title => '管理画面のトップに戻ります') %>
     </h1>
     <h2>
-        <% link_to @site.url do %>
+        <%= link_to(@site.url, :target => '_blank') do %>
         <span><%= @site.name %></span>
         <%= image_tag('admin/header/btn_watchSite.jpg', :alt => 'サイトを確認する', :size => '108x29') %>
         <% end %>

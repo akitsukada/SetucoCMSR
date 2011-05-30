@@ -43,6 +43,7 @@ page = Page.create ([
     :title => 'ページタイトル1',
     :contents => 'こんてんつ1',
     :outline => '概要です1',
+    :created_date => 3.days.ago.to_datetime,
     :account_id => 1,
     :published => 't',
     :category_id => 1
@@ -51,6 +52,7 @@ page = Page.create ([
     :title => 'ページタイトル2',
     :contents => 'こんてんつ2',
     :outline => '概要です2',
+    :created_date => 3.days.ago.to_datetime,
     :account_id => 1,
     :published => 'f',
     :category_id => 2
@@ -59,6 +61,7 @@ page = Page.create ([
     :title => 'ページタイトル3',
     :contents => 'こんてんつ3',
     :outline => '概要です3',
+    :created_date => 3.days.ago.to_datetime,
     :account_id => 1,
     :published => 't',
     :category_id => 2
@@ -67,6 +70,7 @@ page = Page.create ([
     :title => 'hoge',
     :contents => 'hoge',
     :outline => '概要ですo',
+    :created_date => 3.days.ago.to_datetime,
     :account_id => 1,
     :published => 't',
     :category_id => 1
@@ -78,10 +82,17 @@ page = Page.create ([
     :contents => 'hoge',
     :outline => '概要ですo',
     :account_id => 1,
-    :published => 't',
+    :created_date => i.days.ago.to_datetime,
+    :published => i.odd? ? true : false,
     :category_id => 1
   )
 end
+
+acc = Account.create({
+  :login_id => 'admin',
+  :nickname => '管理者さん',
+  :password => Digest::SHA1.hexdigest('password')
+})
 
 pt = PagesTag.create([
   {:page_id => 1, :tag_id => 1},
@@ -109,3 +120,14 @@ pt = PagesTag.create([
   {:page_id => 20, :tag_id => 3},
   {:page_id => 21, :tag_id => 3},
 ])
+
+amb = Ambition.create(
+  :ambition => 'Rails3！！'
+)
+
+(1..10).each do |t|
+goal = Goal.create(
+  :page_count => t ** 2,
+  :target_month => (10.months.ago + t.months).beginning_of_month
+)
+end

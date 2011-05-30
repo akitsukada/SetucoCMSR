@@ -9,9 +9,9 @@ class AdminParentController < ApplicationController
     # data from config
     @copyright_years = SetucoCMSR::Application.config.years
     @authors = SetucoCMSR::Application.config.authors
-    @navi = YAML.load_file(File.join(Rails.root, 'config', 'navigation.yaml'))
-
-
+    @navi = YAML.load_file( File.join(
+      Rails.root, 'config', 'navigation', "#{I18n.locale}.yaml"
+    ))
 
     # data from db
     @site = Site.find(1)

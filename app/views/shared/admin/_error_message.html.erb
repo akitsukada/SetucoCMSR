@@ -1,0 +1,14 @@
+<div class="errorMessageArea">
+<?php foreach ($this->errorForm->getMessages() as $messages): ?>
+    <?php if (!is_array($messages)):?>
+    <p class="clear"><?php echo $this->escape($messages) ?></p>
+    <?php else: ?>
+        <?php foreach ($messages as $message):?>
+    <p class="clear"><?php echo $this->escape($message) ?></p>
+        <?php endforeach ?>
+    <?php endif ?>
+<?php endforeach ?>
+    <p>
+        <a href="javascript:void(0)" onclick="hideErrorMessageArea()">OK</a>
+    </p>
+</div>
