@@ -22,6 +22,8 @@ class AdminSharedController < AdminParentController
   #     controller: 'パンくずリストからリンクされるコントローラ名',
   #     action: 'パンくずリストからリンクされるアクション名'
   #   },
+  #      :
+  #      :
   #   {
   #     name: 'サブタイトル',
   #   },
