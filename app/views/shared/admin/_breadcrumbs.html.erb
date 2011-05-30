@@ -1,0 +1,18 @@
+<!-- topicPath START -->
+<div id="topicPath">
+    <p>
+    <a href="<?php echo $this->baseUrl('/admin') ?>">トップ</a>
+    <%= image_tag 'admin/share/topicPath.gif', :alt => 'の中の', :size => '6x11' %>
+    </p>
+    <% @subtitle.each do |s| %>
+    <p>
+    <% if s == @subtitle.last %>
+        <%= s[:name] %>
+    <% else %>
+        <%= link_to s[:name], :controller => s[:controller], :action => s[:action] %>
+        <%= image_tag('admin/share/topicPath.gif', :alt => 'の中の', :size => '6x11') %>
+    <% end %>
+    </p>
+    <% end %>
+</div>
+<!-- topicpath END -->

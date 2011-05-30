@@ -7,7 +7,7 @@
         <%= javascript_include_tag 'shared/jquery.updnWatermark.js' %>
         <%= javascript_include_tag 'shared/keyword.js' %>
         <%= csrf_meta_tag %>
-        <title><%= @subtitle if @subtitle %>SetucoCMSR</title>
+        <title><%= @subtitle.last[:name] + " : " if @subtitle %>SetucoCMSR</title>
     </head>
     <body class="soria">
         <!-- container START -->
@@ -27,6 +27,7 @@
                 <div id="mainContent">
                     <!-- mainContentInner START -->
                     <div id="mainContentInner">
+                        <%= render :partial => 'shared/admin/breadcrumbs' if @breadcrumbs %>
                         <%= yield %>
                     </div>
                     <!-- mainContentInner END -->

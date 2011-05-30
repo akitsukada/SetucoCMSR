@@ -9,6 +9,8 @@ class AdminParentController < ApplicationController
     # data from config
     @copyright_years = SetucoCMSR::Application.config.years
     @authors = SetucoCMSR::Application.config.authors
+
+    # sidebar navigation
     @navi = YAML.load_file( File.join(
       Rails.root, 'config', 'navigation', "#{I18n.locale}.yaml"
     ))
@@ -18,9 +20,6 @@ class AdminParentController < ApplicationController
 
     # login user
     @login_user = 'admin' # TODO: 実装する
-
-    # sidebar navigation
-
 
   end
 end
