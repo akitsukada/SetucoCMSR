@@ -1,5 +1,7 @@
+# -*- coding:UTF-8 -*-
 class Admin::IndexController < AdminParentController
   def index
+    subtitle :name => 'トップ'
     @ambition = Ambition.all[0]
     @update_status = Goal.update_status
     @update_count = Page.updates_of_this_month.count

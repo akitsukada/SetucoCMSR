@@ -1,6 +1,6 @@
 <!-- section"野望" START -->
 <div class="section">
-    <%= render :partial => 'shared/admin/error_message' if @error_message %>
+    <%= render :partial => 'shared/admin/alert' if alert %>
     <%= form_for @ambition, :url => :admin_ambition, :method => :put do |f| %>
         <dl id="designs">
             <dt>

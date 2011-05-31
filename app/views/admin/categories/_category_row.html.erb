@@ -1,0 +1,26 @@
+<td>
+    <span><%= category.name %></span>
+
+    <div class="rowEdit">
+        <%= form_for category do |f| %>
+        <p>
+        <%= f.text_field :name, :class => 'defaultInput', :size => nil %>
+        <%= f.submit '保存', :class => 'sub', :disable_with => '保存中...' %>
+        <%= f.submit 'キャンセル', :onclick => 'hideRowEdit(this)', :type => :button, :name => :cancel %>
+        </p>
+        <% end %>
+    </div>
+</td>
+
+<td class="editButton">
+    <a href="javascript:void(0)" onclick="showRowEdit(this)">
+        <img src="<?php echo $this->baseUrl('/images/admin/share/btn_edit.png') ?>" alt="編集" width="27" height="27" />
+    </a>
+</td>
+
+<?php $redirectUrl = $this->baseUrl("/admin/category/delete/id/{$this->category['id']}") ?>
+<td>
+    <a href='javascript:void(0)' onclick='confirmDeleteRedirect("<?php echo $redirectUrl ?>", "<?php echo $this->escape($this->category['name']) ?>");'>
+        <img src="<?php echo $this->baseUrl('/images/admin/share/btn_delete.png') ?>" alt='削除' width='27' height='27' />
+    </a>
+</td>

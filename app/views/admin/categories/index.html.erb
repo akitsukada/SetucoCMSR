@@ -1,2 +1,44 @@
-<h1>Admin::Categories#index</h1>
-<p>Find me in app/views/admin/categories/index.html.erb</p>
+<!-- section START -->
+<div class="section">
+
+    <%= render :partial => 'shared/admin/subtitle' %>
+    <%= render :partial => 'shared/admin/notice' if notice %>
+    <%= render :partial => 'shared/admin/alert' if alert %>
+
+    <%= form_for @new_category, :url => :admin_categories do |f| %>
+        <p class="default">
+        <%= f.text_field :name, :name => "cat_name", :id => "cat_name", :class => "defaultInput" %>
+        <%= f.submit '追加', :disable_with => '登録中...', :class => 'sub' %>
+        </p>
+    <% end %>
+
+    <table summary="カテゴリー一覧の表です。カテゴリーの追加・編集・削除ができます。" cellpadding="0" cellspacing="0">
+        <colgroup>
+            <col width="80%" />
+            <col width="10%" />
+            <col width="10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" id="tableFirst">カテゴリー名
+                    <%= link_to(image_tag('admin/share/btn_sort_descending.gif', :alt => "降順に並び替え", :size => '15x15'), :action => :index, :order => :desc) %>
+                    <%= link_to(image_tag('admin/share/btn_sort_ascending.gif',  :alt => "昇順に並び替え", :size => '15x15'), :action => :index, :order => :asc) %>
+                </th>
+                <th scope="col">編集</th>
+                <th scope="col">削除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @categories.each do |cat| %>
+            <tr<%= cycle '', 'class="check"' %>>
+                <%= render 'admin/categories/category_row', :category => cat %>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <?php echo $this->paginator; ?>
+
+</div>
+<!-- section END -->
+
