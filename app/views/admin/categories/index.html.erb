@@ -30,14 +30,14 @@
         </thead>
         <tbody>
             <% @categories.each do |cat| %>
-            <tr<%= cycle '', 'class="check"' %>>
+            <tr<%= cycle "", " class='check'" %>>
                 <%= render 'admin/categories/category_row', :category => cat %>
             </tr>
             <% end %>
         </tbody>
     </table>
 
-    <?php echo $this->paginator; ?>
+    <%= paginate @categories %>
 
 </div>
 <!-- section END -->

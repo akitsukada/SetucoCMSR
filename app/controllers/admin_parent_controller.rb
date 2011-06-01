@@ -1,10 +1,10 @@
 # -*- coding:UTF-8 -*-
 class AdminParentController < ApplicationController
   layout 'admin'
-  before_filter :loaddata_for_layout
+  before_filter :init
 
   private
-  def loaddata_for_layout
+  def init
 
     # data from config
     @copyright_years = SetucoCMSR::Application.config.years

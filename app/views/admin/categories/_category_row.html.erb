@@ -14,13 +14,12 @@
 
 <td class="editButton">
     <a href="javascript:void(0)" onclick="showRowEdit(this)">
-        <img src="<?php echo $this->baseUrl('/images/admin/share/btn_edit.png') ?>" alt="編集" width="27" height="27" />
+        <%= image_tag('admin/share/btn_edit.png', :alt => '編集', :size => '27x27') %>
     </a>
 </td>
 
-<?php $redirectUrl = $this->baseUrl("/admin/category/delete/id/{$this->category['id']}") ?>
 <td>
-    <a href='javascript:void(0)' onclick='confirmDeleteRedirect("<?php echo $redirectUrl ?>", "<?php echo $this->escape($this->category['name']) ?>");'>
-        <img src="<?php echo $this->baseUrl('/images/admin/share/btn_delete.png') ?>" alt='削除' width='27' height='27' />
-    </a>
+    <%= link_to image_tag('admin/share/btn_delete.png', :alt => '編集', :size => '27x27'),
+        {:controller => :categories, :action => :destroy, :id => category.id},
+        {:method => :delete, :confirm => "「#{category.name}」を本当に削除してよろしいですか？"} %>
 </td>

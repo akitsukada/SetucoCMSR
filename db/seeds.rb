@@ -1,5 +1,5 @@
 # -*- coding:UTF-8 -*-
-
+require 'date'
 # 初期サンプルデータ
 
 site = Site.create(
@@ -125,9 +125,10 @@ amb = Ambition.create(
   :ambition => 'Rails3！！'
 )
 
+today = Date.today
 (1..10).each do |t|
 goal = Goal.create(
   :page_count => t ** 2,
-  :target_month => (10.months.ago + t.months).beginning_of_month
+  :target_month => (today - 10.months + t.months).beginning_of_month
 )
 end
