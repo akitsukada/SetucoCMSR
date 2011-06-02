@@ -1,13 +1,13 @@
 <!-- section START -->
 <div class="section">
 
-    <%= render :partial => 'shared/admin/subtitle' %>
-    <%= render :partial => 'shared/admin/notice' if notice %>
-    <%= render :partial => 'shared/admin/alert' if alert %>
+    <%= render 'shared/admin/subtitle' %>
+    <%= render 'shared/admin/notice', :notice => notice if notice %>
+    <%= render 'shared/admin/alert' if alert %>
 
     <%= form_for @new_category, :url => :admin_categories do |f| %>
         <p class="default">
-        <%= f.text_field :name, :name => "cat_name", :id => "cat_name", :class => "defaultInput" %>
+        <%= f.text_field :name, :id => "cat_name", :class => "defaultInput" %>
         <%= f.submit '追加', :disable_with => '登録中...', :class => 'sub' %>
         </p>
     <% end %>

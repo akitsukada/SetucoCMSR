@@ -7,6 +7,10 @@ class Admin::CategoriesController < AdminSharedController
   end
 
   def create
+    @category = Category.new(params[:category])
+    if @category.save
+      redirect_to(:admin_categories, :notice => "「#{@category.name}」を作成しました。")
+    end
   end
 
   def update

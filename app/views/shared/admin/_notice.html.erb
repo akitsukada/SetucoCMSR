@@ -1,10 +1,6 @@
-<?php if (count($this->flashMessages)): ?>
-    <div class="messageArea">
-    <?php foreach ($this->flashMessages as $flashMessage): ?>
-        <p class="clear"><?php echo $this->escape($flashMessage) ?></p>
-    <?php endforeach ?>
-        <p>
-            <a href="javascript:void(0)" onclick="hideMessageArea()">OK</a>
-        </p>
-    </div>
-<?php endif ?>
+<div class="messageArea">
+    <p class="clear"><%= notice %></p>
+    <p>
+        <a href="javascript:void(0)" onclick="hideMessageArea()">OK</a>
+    </p>
+</div>

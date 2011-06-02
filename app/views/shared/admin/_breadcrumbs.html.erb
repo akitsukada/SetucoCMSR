@@ -1,7 +1,7 @@
 <!-- topicPath START -->
 <div id="topicPath">
     <p>
-    <a href="<?php echo $this->baseUrl('/admin') ?>">トップ</a>
+    <%= link_to 'トップ', :admin_root %>
     <%= image_tag 'admin/share/topicPath.gif', :alt => 'の中の', :size => '6x11' %>
     </p>
     <% @subtitle.each do |s| %>

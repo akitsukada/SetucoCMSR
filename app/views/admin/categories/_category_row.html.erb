@@ -1,19 +1,23 @@
+<%
+spanId = "category_name_#{category.id}"
+editFormId = "category_form_#{category.id}"
+%>
 <td>
-    <span><%= category.name %></span>
+    <span id="<%= spanId %>"><%= category.name %></span>
 
-    <div class="rowEdit">
+    <div class="rowEdit" id="<%= editFormId %>">
         <%= form_for category do |f| %>
         <p>
         <%= f.text_field :name, :class => 'defaultInput', :size => nil %>
         <%= f.submit '保存', :class => 'sub', :disable_with => '保存中...' %>
-        <%= f.submit 'キャンセル', :onclick => 'hideRowEdit(this)', :type => :button, :name => :cancel %>
+        <%= f.submit 'キャンセル', :onclick => "toggleDisplay('#{editFormId}', '#{spanId}')", :type => :button, :name => :cancel %>
         </p>
         <% end %>
     </div>
 </td>
 
 <td class="editButton">
-    <a href="javascript:void(0)" onclick="showRowEdit(this)">
+    <a href="javascript:void(0)" onclick="toggleDisplay('<%= spanId %>', '<%= editFormId %>')">
         <%= image_tag('admin/share/btn_edit.png', :alt => '編集', :size => '27x27') %>
     </a>
 </td>
