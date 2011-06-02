@@ -3,9 +3,9 @@
 
     <%= render 'shared/admin/subtitle' %>
     <%= render 'shared/admin/notice', :notice => notice if notice %>
-    <%= render 'shared/admin/alert' if alert %>
+    <%= render 'shared/admin/alert', :alert => alert if alert %>
 
-    <%= form_for @new_category, :url => :admin_categories do |f| %>
+    <%= form_for @category, :url => :admin_categories do |f| %>
         <p class="default">
         <%= f.text_field :name, :id => "cat_name", :class => "defaultInput" %>
         <%= f.submit '追加', :disable_with => '登録中...', :class => 'sub' %>
