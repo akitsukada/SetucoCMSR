@@ -1,2 +1,44 @@
-<h1>Admin::Tags#index</h1>
-<p>Find me in app/views/admin/tags/index.html.erb</p>
+<!-- section START -->
+<div class="section">
+
+    <%= render 'shared/admin/subtitle', :image_path => 'admin/tag/h_tagAll.jpg', :image_size => '168x18' %>
+    <%= render 'shared/admin/notice', :notice => notice if notice %>
+    <%= render 'shared/admin/alert', :alert => alert if alert %>
+
+    <%= form_for @tag, :url => :admin_tags do |f| %>
+        <p class="default">
+        <%= f.text_field :name, :id => "tag_name", :class => "defaultInput", :title => "新規タグ" %>
+        <%= f.submit '追加', :disable_with => '登録中...', :class => 'sub' %>
+        </p>
+    <% end %>
+
+    <table summary="タグ一覧の表です。タグの追加・編集・削除ができます。" cellpadding="0" cellspacing="0">
+        <colgroup>
+            <col width="80%" />
+            <col width="10%" />
+            <col width="10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" id="tableFirst">タグ名
+                    <%= link_to(image_tag('admin/share/btn_sort_descending.gif', :alt => "降順に並び替え", :size => '15x15'), :action => :index, :order => :desc) %>
+                    <%= link_to(image_tag('admin/share/btn_sort_ascending.gif',  :alt => "昇順に並び替え", :size => '15x15'), :action => :index, :order => :asc) %>
+                </th>
+                <th scope="col">編集</th>
+                <th scope="col">削除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @tags.each do |tag| %>
+            <tr<%= cycle "", " class='check'" %>>
+                <%= render 'shared/admin/simple_row', :item => tag %>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <%= paginate @tags %>
+
+</div>
+<!-- section END -->
+

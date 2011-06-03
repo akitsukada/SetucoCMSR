@@ -1,12 +1,12 @@
 <%
-spanId = "category_name_#{category.id}"
-editFormId = "category_form_#{category.id}"
+spanId = "item_name_#{item.id}"
+editFormId = "item_form_#{item.id}"
 %>
 <td>
-    <span id="<%= spanId %>"><%= category.name %></span>
+    <span id="<%= spanId %>"><%= item.name %></span>
 
     <div class="rowEdit" id="<%= editFormId %>">
-        <%= form_for category, :url => {:action => :update, :id => category.id} do |f| %>
+        <%= form_for item, :url => {:action => :update, :id => item.id} do |f| %>
         <p>
         <%= f.text_field :name, :class => 'defaultInput', :size => nil %>
         <%= f.submit '保存', :class => 'sub', :disable_with => '保存中...' %>
@@ -25,6 +25,6 @@ editFormId = "category_form_#{category.id}"
 
 <td>
     <%= link_to image_tag('admin/share/btn_delete.png', :alt => '編集', :size => '27x27'),
-        {:controller => :categories, :action => :destroy, :id => category.id},
-        {:method => :delete, :confirm => "「#{category.name}」を本当に削除してよろしいですか？"} %>
+        {:controller => controller.controller_name, :action => :destroy, :id => item.id},
+        {:method => :delete, :confirm => "「#{item.name}」を本当に削除してよろしいですか？"} %>
 </td>
