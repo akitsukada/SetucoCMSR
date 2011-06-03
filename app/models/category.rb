@@ -1,7 +1,9 @@
 # -*- coding:UTF-8 -*-
 class Category < ActiveRecord::Base
   has_many :pages
-  belongs_to :categories, :foreign_key => :parent_id
+
+  has_many :children, :class_name => 'Category', :foreign_key => :parent_id
+  belongs_to :parent, :class_name => 'Category', :foreign_key => :parent_id
 
   validates :name,
     :presence => {:message => 'カテゴリ名を入力してください。'},

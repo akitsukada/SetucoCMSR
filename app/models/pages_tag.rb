@@ -8,7 +8,7 @@ class PagesTag < ActiveRecord::Base
     .order('tags.updated_at desc')
     .group('tag_id', 'tags.updated_at')
 
+  # level = size rank in tagcloud
   attr_accessor :level
-
 
 end

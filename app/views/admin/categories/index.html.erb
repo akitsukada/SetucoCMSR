@@ -7,7 +7,7 @@
 
     <%= form_for @category, :url => :admin_categories do |f| %>
         <p class="default">
-        <%= f.text_field :name, :id => "cat_name", :class => "defaultInput" %>
+        <%= f.text_field :name, :id => "cat_name", :class => "defaultInput", :title => "新規カテゴリー" %>
         <%= f.submit '追加', :disable_with => '登録中...', :class => 'sub' %>
         </p>
     <% end %>

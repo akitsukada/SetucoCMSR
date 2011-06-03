@@ -10,32 +10,17 @@ site = Site.create(
   :open_date => Time.now
 )
 
-category = Category.create([
-  {:name => 'cat1'},
-  {:name => 'cat2'},
-  {:name => 'cat3'},
-])
+10.times do |n|
+  category = Category.create([
+    {:name => "cat#{n}"}
+  ])
+end
 
-tag = Tag.create([
-  {:name => 'tag1'},
-  {:name => 'tag2'},
-  {:name => 'tag3'},
-  {:name => 'tag4'},
-  {:name => 'tag5'},
-  {:name => 'tag6'},
-  {:name => 'tag7'},
-  {:name => 'tag8'},
-  {:name => 'tag9'},
-  {:name => 'tag10'},
-  {:name => 'tag11'},
-  {:name => 'tag12'},
-  {:name => 'tag13'},
-  {:name => 'tag14'},
-  {:name => 'tag15'},
-  {:name => 'tag16'},
-  {:name => 'tag17'},
-  {:name => 'tag18'},
-])
+18.times do |n|
+  tag = Tag.create([
+    {:name => "tag1#{n}"}
+  ])
+end
 
 
 page = Page.create ([

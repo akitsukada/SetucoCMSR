@@ -6,20 +6,24 @@ class AdminParentController < ApplicationController
   private
   def init
 
-    # data from config
-    @copyright_years = SetucoCMSR::Application.config.years
-    @authors = SetucoCMSR::Application.config.authors
+    begin
+      # data from config
+      @copyright_years = SetucoCMSR::Application.config.years
+      @authors = SetucoCMSR::Application.config.authors
 
-    # sidebar navigation
-    @navi = YAML.load_file( File.join(
-      Rails.root, 'config', 'navigation', "#{I18n.locale}.yaml"
-    ))
+      # sidebar navigation
+      @navi = YAML.load_file( File.join(
+        Rails.root, 'config', 'navigation', "#{I18n.locale}.yaml"
+      ))
 
-    # data from db
-    @site = Site.find(1)
+      # data from db
+      @site = Site.find(1)
 
-    # login user
-    @login_user = 'admin' # TODO: 実装する
+      # login user
+      @login_user = 'admin' # TODO: 実装する
+    rescue => e
+      #初期化失敗
+    end
 
   end
 

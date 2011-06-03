@@ -6,11 +6,12 @@ editFormId = "category_form_#{category.id}"
     <span id="<%= spanId %>"><%= category.name %></span>
 
     <div class="rowEdit" id="<%= editFormId %>">
-        <%= form_for category do |f| %>
+        <%= form_for category, :url => {:action => :update, :id => category.id} do |f| %>
         <p>
         <%= f.text_field :name, :class => 'defaultInput', :size => nil %>
         <%= f.submit '保存', :class => 'sub', :disable_with => '保存中...' %>
-        <%= f.submit 'キャンセル', :onclick => "toggleDisplay('#{editFormId}', '#{spanId}')", :type => :button, :name => :cancel %>
+        <%= f.submit 'キャンセル',
+            :onclick => "toggleDisplay('#{editFormId}', '#{spanId}')", :type => :button, :name => :cancel %>
         </p>
         <% end %>
     </div>
