@@ -25,7 +25,7 @@ class Admin::CategoriesController < AdminSharedController
         @category = Category.find(params[:id])
         @category.update_attributes!(params[:category])
       end
-      redirect_to(:admin_categories, :notice => "「#{@category.previous_changes[:name][0]}」を「#{@category.name}」を更新しました。")
+      redirect_to(:admin_categories, :notice => "「#{@category.previous_changes[:name][0]}」を「#{@category.name}」に更新しました。")
     rescue => e
       redirect_to :admin_categories, :alert => @category.errors
     end

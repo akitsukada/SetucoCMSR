@@ -6,6 +6,15 @@ class Admin::SitesController < AdminSharedController
   end
 
   def update
+    begin
+      Site.transaction do
+        @site = Site.find(1)
+        @site.update_attributes!(params[:site])
+      end
+      redirect_to(:edit_admin_site, :notice => t('site.update.complete'))
+    rescue => e
+      redirect_to :edit_admin_site, :alert => @site.errors
+    end
   end
 
 end

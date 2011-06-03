@@ -25,7 +25,7 @@ class Admin::TagsController < AdminSharedController
         @tag = Tag.find(params[:id])
         @tag.update_attributes!(params[:tag])
       end
-      redirect_to(:admin_tags, :notice => "「#{@tag.previous_changes[:name][0]}」を「#{@tag.name}」を更新しました。", :params => {:hoge => 'aaa'})
+      redirect_to(:admin_tags, :notice => "「#{@tag.previous_changes[:name][0]}」を「#{@tag.name}」に更新しました。", :params => {:hoge => 'aaa'})
     rescue => e
       redirect_to :admin_tags, :alert => @tag.errors
     end

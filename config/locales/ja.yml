@@ -48,6 +48,8 @@ ja:
       note: 'サイトのキーワードです。サイトに関連する単語を入力してください。'
       attention: '（カンマ[,]で区切る）'
     submit_word: 'サイト情報を変更'
+    update:
+      complete: 'サイト情報を編集しました。'
 
 
   views:

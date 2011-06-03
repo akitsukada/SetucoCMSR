@@ -41,6 +41,8 @@
       note: 'Words related to your site'
       attention: '(Separate by the comma)'
     submit_word: 'Update site information'
+    update:
+      complete: 'Site information is updated.'
 
   views:
     pagination:
