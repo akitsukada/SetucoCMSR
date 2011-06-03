@@ -2,8 +2,9 @@
 class Admin::TagsController < AdminSharedController
   def index
     subtitle :name =>  'タグの追加・編集・削除'
+    order = 'name ' + (params[:order] ? params[:order] : 'asc')
     @tag = Tag.new
-    @tags = Tag.order('name asc').page(params[:page]).per(10)
+    @tags = Tag.order(order).page(params[:page]).per(10)
   end
 
   def create

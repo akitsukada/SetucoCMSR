@@ -18,7 +18,7 @@ end
 
 18.times do |n|
   tag = Tag.create([
-    {:name => "tag1#{n}"}
+    {:name => "tag#{n}"}
   ])
 end
 

@@ -2,8 +2,9 @@
 class Admin::CategoriesController < AdminSharedController
   def index
     subtitle :name =>  'カテゴリーの追加・編集・削除'
+    order = 'name ' + (params[:order] ? params[:order] : ' asc')
     @category = Category.new
-    @categories = Category.order('name asc').page(params[:page]).per(10)
+    @categories = Category.order(order).page(params[:page]).per(10)
   end
 
   def create
