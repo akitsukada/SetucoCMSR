@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%= render :partial => "shared/default/html_header" %>
+        <%= render :partial => "default/shared/html_header" %>
         <%= stylesheet_link_tag 'style' %>
         <%= javascript_include_tag :defaults %>
         <%= javascript_include_tag 'shared/jquery.updnWatermark.js' %>
@@ -14,7 +14,7 @@
         <div id="wrapper">
             <!-- header START -->
             <div id="header_innerL">
-                <%= render :partial => 'shared/default/header' %>
+                <%= render :partial => 'default/shared/header' %>
             </div>
             <!-- header END -->
             <!-- content START -->
@@ -26,12 +26,12 @@
                 <!-- mainContent END -->
                 <!-- subContent START -->
                 <div id="subContent">
-                    <%= render :partial => 'shared/default/navi' %>
+                    <%= render :partial => 'default/shared/navi' %>
                 </div>
                 <!-- subContent END -->
             </div>
             <!-- content END -->
-            <%= render :partial => 'shared/default/footer' %>
+            <%= render :partial => 'default/shared/footer' %>
         </div>
         <!-- wrapper END -->
     </body>

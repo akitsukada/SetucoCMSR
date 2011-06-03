@@ -1,5 +1,6 @@
 class Page < ActiveRecord::Base
   has_and_belongs_to_many :tags
+  has_many :pages_tags, :dependent => :destroy
   belongs_to :account
   belongs_to :category
 
@@ -8,8 +9,8 @@ class Page < ActiveRecord::Base
   scope :default_keyword_search, lambda { |key|
     where("published = 't' and " +
           "(title like ? or contents like ? or outline like ? or exists " +
-          "(select * from pages p, tags, pages_tags where p.id = pages_tags.page_id " +
-          "and pages_tags.tag_id = tags.id and tags.name like ? and pages.id = p.id))",
+          "(select * from pages p, tags, pages_tags where tags.name like ? " +
+          "and p.id = pages_tags.page_id and pages_tags.tag_id = tags.id and pages.id = p.id))",
           "%" + key + "%", "%" + key + "%", "%" + key + "%", "%" + key + "%"
          )
   }

@@ -7,7 +7,7 @@ class Default::TagsController < DefaultParentController
     @search_result = @tag.pages.order('updated_at desc').page(params[:page]).per(10)
     @total_count = @tag.pages.count
     set_subtitle "「#{@tag.name}」タグのページ"
-    render 'shared/default/search'
+    render 'default/shared/search'
   end
 
 end

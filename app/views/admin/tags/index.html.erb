@@ -1,9 +1,9 @@
 <!-- section START -->
 <div class="section">
 
-    <%= render 'shared/admin/subtitle', :image_path => 'admin/tag/h_tagAll.jpg', :image_size => '168x18' %>
-    <%= render 'shared/admin/notice', :notice => notice if notice %>
-    <%= render 'shared/admin/alert', :alert => alert if alert %>
+    <%= render 'admin/shared/subtitle', :image_path => 'admin/tag/h_tagAll.jpg', :image_size => '168x18' %>
+    <%= render 'admin/shared/notice', :notice => notice if notice %>
+    <%= render 'admin/shared/alert', :alert => alert if alert %>
 
     <%= form_for @tag, :url => :admin_tags do |f| %>
         <p class="default">
@@ -31,7 +31,7 @@
         <tbody>
             <% @tags.each do |tag| %>
             <tr<%= cycle "", " class='check'" %>>
-                <%= render 'shared/admin/simple_row', :item => tag %>
+                <%= render 'admin/shared/simple_row', :item => tag %>
             </tr>
             <% end %>
         </tbody>

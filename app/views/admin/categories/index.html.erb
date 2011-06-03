@@ -1,9 +1,9 @@
 <!-- section START -->
 <div class="section">
 
-    <%= render 'shared/admin/subtitle', :image_path => 'admin/category/h_catAll.jpg', :image_size => '208x18' %>
-    <%= render 'shared/admin/notice', :notice => notice if notice %>
-    <%= render 'shared/admin/alert', :alert => alert if alert %>
+    <%= render 'admin/shared/subtitle', :image_path => 'admin/category/h_catAll.jpg', :image_size => '208x18' %>
+    <%= render 'admin/shared/notice', :notice => notice if notice %>
+    <%= render 'admin/shared/alert', :alert => alert if alert %>
 
     <%= form_for @category, :url => :admin_categories do |f| %>
         <p class="default">
@@ -31,7 +31,7 @@
         <tbody>
             <% @categories.each do |cat| %>
             <tr<%= cycle "", " class='check'" %>>
-                <%= render 'shared/admin/simple_row', :item => cat %>
+                <%= render 'admin/shared/simple_row', :item => cat %>
             </tr>
             <% end %>
         </tbody>

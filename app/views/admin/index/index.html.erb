@@ -1,6 +1,6 @@
 <!-- section"野望" START -->
 <div class="section">
-    <%= render :partial => 'shared/admin/alert' if alert %>
+    <%= render :partial => 'admin/shared/alert' if alert %>
     <%= form_for @ambition, :url => :admin_ambition, :method => :put do |f| %>
         <dl id="designs">
             <dt>
@@ -83,7 +83,7 @@
         <%= link_to page.title, :controller => :pages, :action => :edit, :id => page.id  %>
         </dd>
         <dt>カテゴリー</dt>
-        <dd><%= page.category.name %></dd>
+        <dd><%= page.category.nil? ? '未分類' : page.category.name %></dd>
         <dt>制作者</dt>
         <dd><%= page.account.nickname %></dd>
         <dt>公開状態</dt>

@@ -25,6 +25,9 @@ ja:
     minus: '目標まであと%{count}ページ！'
     plus: '目標からプラス%{count}ページ！'
 
+  category:
+    uncategorized: '未分類'
+
   views:
     pagination:
       first: "|<<"

@@ -3,6 +3,25 @@
 # Use this as the base for the locale file of your language.
 
 "en-US":
+
+  status:
+    good:
+      image: "admin/index/status_good.jpg"
+      word: "Great!!Wonderful!!!"
+    normal:
+      image: "admin/index/status_good.jpg"
+      word: "Keep it up!"
+    bad:
+      image: "admin/index/status_good.jpg"
+      word: "Hang in there!"
+    beginning_of_month:
+      image: "admin/index/status_good.jpg"
+      word: "Enjoy your Web!"
+
+
+  category:
+    uncategorized: 'uncategorized'
+
   views:
     pagination:
       first: "|<<"

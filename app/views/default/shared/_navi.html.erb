@@ -17,9 +17,9 @@
         <% end %>
             <li>
             <% if @uncategorized.length > 0 %>
-                <%= link_to '未分類', 'default/categories/0'  %>
+            <%= link_to t( 'category.uncategorized'), :controller => :categories, :action => :show, :id => 0  %>
             <% else %>
-                <span>未分類</span>
+                <span><%= t 'category.uncategorized' %></span>
             <% end %>
             </li>
         </ul>

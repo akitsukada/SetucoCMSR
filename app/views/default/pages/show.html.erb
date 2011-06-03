@@ -7,7 +7,11 @@
     <dl class="category">
         <dt>カテゴリー：</dt>
         <dd>
-            <%= link_to @page.category.name, @page.category %>
+        <% if @page.category.blank? %>
+            <%= link_to t('category.uncategorized'), 'default/categories/0' %>
+        <% else %>
+            <%= link_to(@page.category.name, @page.category) %>
+        <% end %>
         </dd>
     </dl>
     <div class="entryBody">

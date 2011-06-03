@@ -4,9 +4,9 @@
         <h2><span>「<%= @query %>」の検索結果（<%= @total_count %>件）</span></h2>
     </div>
     <% if @search_result.count > 0 %>
-    <%= render 'shared/default/search_result' %>
+    <%= render 'default/shared/search_result' %>
     <% else %>
-    <%= render 'shared/default/search_result_not_found' %>
+    <%= render 'default/shared/search_result_not_found' %>
     <% end %>
 </div>
 <!-- entry END -->

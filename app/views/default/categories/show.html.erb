@@ -1,7 +1,7 @@
-<% if @category.pages.count == 0 %>
-    <p>カテゴリー「<%= @category.name %>」にはページがありません。</p>
+<% if @total_count == 0 %>
+    <p>カテゴリー「<%= @category_name %>」にはページがありません。</p>
 <% else %>
-    <p>カテゴリー「<%= @category.name %>」のページ一覧</p>
+    <p>カテゴリー「<%= @category_name %>」のページ一覧</p>
     <% @pages.each do |p| %>
     <!-- entry START -->
     <div class="entry">
@@ -13,7 +13,7 @@
         </div>
         <dl class="category">
             <dt>カテゴリー：</dt>
-            <dd><%= link_to @category.name, @category %></dd>
+            <dd><%= link_to @category_name, @category %></dd>
         </dl>
         <div class="entryBody">
             <%= truncate p.contents, :length => 50 %>
