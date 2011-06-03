@@ -4,6 +4,10 @@
 
 "en-US":
 
+  form:
+    input:
+      required: '[required]'
+
   status:
     good:
       image: "admin/index/status_good.jpg"
@@ -18,9 +22,25 @@
       image: "admin/index/status_good.jpg"
       word: "Enjoy your Web!"
 
-
   category:
     uncategorized: 'uncategorized'
+
+  site:
+    name:
+      label: "Site's name"
+      note: 'This name is displayed on your site'
+    url:
+      label: "Site's URL"
+      attention: '(pay attention to broken link)'
+      note: 'URL that displays your site'
+    comment:
+      label: 'Description'
+      note: 'Outline of site'
+    keyword:
+      label: 'Keywords'
+      note: 'Words related to your site'
+      attention: '(Separate by the comma)'
+    submit_word: 'Update site information'
 
   views:
     pagination:

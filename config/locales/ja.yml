@@ -6,6 +6,10 @@
 
 ja:
 
+  form:
+    input:
+      required: '[必須]'
+
   status:
     good:
       image: "admin/index/status_good.jpg"
@@ -27,6 +31,24 @@ ja:
 
   category:
     uncategorized: '未分類'
+
+  site:
+    name:
+      label: 'サイト名'
+      note: 'サイト上に表示される名前です。'
+    url:
+      label: 'サイトURL'
+      attention: '（リンク切れに注意）'
+      note: 'サイトを表示するURLです。'
+    comment:
+      label: '説明'
+      note: 'サイトの説明です。サイトの概要を入力してください。'
+    keyword:
+      label: 'キーワード'
+      note: 'サイトのキーワードです。サイトに関連する単語を入力してください。'
+      attention: '（カンマ[,]で区切る）'
+    submit_word: 'サイト情報を変更'
+
 
   views:
     pagination:
