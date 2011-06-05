@@ -1,0 +1,38 @@
+<h1>
+    <%= image_tag 'admin/login/loginLogo.gif', :alt => 'せつこCMS  サイト制作に自由さと楽しさを', :size => '245x69' %>
+</h1>
+
+<%= render 'admin/shared/notice', :notice => notice if notice %>
+<%= render 'admin/shared/alert', :alert => alert if alert %>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <dl class="straight">
+      <dt id="login_id-label">
+          <%= f.label :email, 'メールアドレス' %>
+      </dt>
+      <dd>
+          <%= f.email_field :email %>
+      </dd>
+
+      <dt id="password-label">
+          <%= f.label :password, 'パスワード' %>
+      </dt>
+      <dd>
+          <%= f.password_field :password %>
+      </dd>
+
+    </dl>
+
+  <% if devise_mapping.rememberable? -%>
+  <p id="remember_check">
+      <%= f.label :remember_me, '自動的にログイン' %>
+      <%= f.check_box :remember_me %>
+  </p>
+  <% end -%>
+
+  <p><%= f.submit "ログイン" %></p>
+<% end %>
+
+<p style="clear:both">
+<%= render :partial => "accounts/shared/links" %>
+</p>

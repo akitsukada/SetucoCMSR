@@ -3,10 +3,10 @@
  ** global functions
  *********************/
 function hideNotice() {
-  $('div.section > div.messageArea', 'div#mainContentInner').css('display', 'none');
+  $('div.messageArea').css('display', 'none');
 }
 function hideAlert() {
-  $('div.section > div.errorMessageArea', 'div#mainContentInner').css('display', 'none');
+  $('div.errorMessageArea').css('display', 'none');
 }
 function confirmDeleteRedirect(url, item){
   if (confirm("「" + item + "」を本当に削除してよろしいですか？")) {

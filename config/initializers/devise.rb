@@ -22,7 +22,8 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [ :email ]
+  config.authentication_keys = [ :email ]
+  #config.authentication_keys = [ :nickname ]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -54,7 +55,7 @@ Devise.setup do |config|
   config.stretches = 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "db0ecb76cdb055e8cd0ecf09c98688804f8ae3ef7897e25740bd831c46b9c0670a85348a2f1551eefa6fc1084ea03a8cc399900ae974775c3fb6ae50e0e505c7"
+  # config.pepper = "767ce253a2851019d8fd40668ec21842a681c3ee997152a1aa00b762387d8788b17c8510d84a5befa2766f1aea8b740f650de6c4f4ac18cb5a203079e4bc8416"
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
@@ -151,7 +152,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

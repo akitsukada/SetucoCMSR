@@ -12,7 +12,7 @@
 
 <ul>
     <li id="utilLogout">
-        <%= link_to 'ログアウト', :controller => 'admin/login', :action => 'logout' %>
+        <%= link_to 'ログアウト', :controller => 'accounts/sessions', :action => 'destroy' %>
     </li>
     <li id="utilAccount">
     <span><%= @login_user %></span>でログイン中

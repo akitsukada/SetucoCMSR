@@ -1,7 +1,8 @@
 # -*- coding:UTF-8 -*-
 class AdminParentController < ApplicationController
   layout 'admin'
-  before_filter :init
+  before_filter :authenticate_account!, :init
+
 
   private
   def init
@@ -21,6 +22,7 @@ class AdminParentController < ApplicationController
 
       # login user
       @login_user = 'admin' # TODO: 実装する
+
     rescue => e
       #初期化失敗
     end

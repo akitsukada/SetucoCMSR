@@ -1,5 +1,10 @@
 SetucoCMSR::Application.routes.draw do
 
+  devise_for :accounts, :controllers => {
+    :sessions => 'accounts/sessions'
+  }
+  get '/admin' => 'admin/index#index', :as => :account_root
+
   # default, 閲覧側
   scope :module => 'default' do
     resources :index, :only => :index

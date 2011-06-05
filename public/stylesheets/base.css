@@ -596,6 +596,16 @@ body#loginBoad p#copyright {
     clear: right;
     text-align: left;
 }
+body#loginBoad p#remember_check {
+  float: left;
+
+}
+body#loginBoad p#remember_check input#account_remember_me {
+    margin: 3px 0 0 8px;
+}
+body#loginBoad p input[type=submit] {
+    margin-bottom: 10px;
+}
 
 
 /*------------------------------------------------------------*/

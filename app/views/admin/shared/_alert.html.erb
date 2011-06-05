@@ -1,7 +1,16 @@
 <div class="errorMessageArea">
+<% case alert %>
+<% when Hash %>
     <% alert.each do |k, m| %>
     <p class="clear"><%= m %></p>
     <% end %>
+<% when Array %>
+    <% alert.each do | m| %>
+    <p class="clear"><%= m %></p>
+    <% end %>
+<% when String %>
+    <p class="clear"><%= alert %></p>
+<% end %>
     <p>
         <a href="javascript:void(0)" onclick="hideAlert()">OK</a>
     </p>
