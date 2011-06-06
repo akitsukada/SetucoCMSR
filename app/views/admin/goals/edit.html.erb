@@ -1,2 +1,22 @@
-<h1>Admin::Goals#edit</h1>
-<p>Find me in app/views/admin/goals/edit.html.erb</p>
+<!-- section START -->
+<div class="section">
+
+    <%= render 'admin/shared/subtitle', :image_path => 'admin/index/h_goal.jpg', :image_size => '107x18' %>
+    <%= render 'admin/shared/notice', :notice => notice if notice %>
+    <%= render 'admin/shared/alert', :alert => alert if alert %>
+
+    <%= form_for(@goal, :url => :admin_goal) do |f| %>
+        <dl class="editArea">
+            <dt id="goal-label">
+            <%= f.label :page_count, t('goal.page_count.label') %>
+            </dt>
+            <dd>
+            <%= f.text_field :page_count, :onblur => "if(this.value == '') { this.value='#{@goal.page_count}'; }" %>ページ
+            </dd>
+        </dl>
+        <p class="editAreaP">
+        <%= f.submit t('goal.submit.update'), :disable_with => '保存中'  %>
+        </p>
+    <% end %>
+</div>
+<!-- section END -->

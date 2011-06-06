@@ -44,6 +44,15 @@
     update:
       complete: 'Site information is updated.'
 
+  goal:
+    page_count:
+      label: 'Number of new articles a month'
+      presence: 'Number of new articles a month is required.'
+    submit:
+      update: 'Update goal'
+    update:
+      complete: 'Goal information is updated.'
+
   views:
     pagination:
       first: "|<<"

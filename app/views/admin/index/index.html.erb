@@ -31,7 +31,7 @@
                     <%= image_tag 'admin/index/h_nowData.jpg', :alt => '現在の状況', :size => '112x22' %>
                 </h3>
                 <p>
-                    <%= link_to '更新目標の編集', :controller => 'goals', :action => 'edit' %>
+                <%= link_to '更新目標の編集', :controller => 'goals', :action => 'edit', :id => @goal.id %>
                 </p>
             </div>
         </div>

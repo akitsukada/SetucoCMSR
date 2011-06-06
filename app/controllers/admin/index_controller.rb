@@ -3,6 +3,7 @@ class Admin::IndexController < AdminParentController
   def index
     subtitle :name => 'トップ'
     @ambition = Ambition.all[0]
+    @goal = Goal.goal_of_this_month
     @update_status = Goal.update_status
     @update_count = Page.updates_of_this_month.count
     @diff_status,@diff_count = Goal.diff_count @update_count

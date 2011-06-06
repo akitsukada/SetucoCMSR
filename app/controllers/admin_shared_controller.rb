@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 class AdminSharedController < AdminParentController
 
-  before_filter :set_breadcrumbs
+  before_filter :enable_breadcrumbs
 
   private
-  def set_breadcrumbs
+  def enable_breadcrumbs
     @breadcrumbs = true
   end
 

@@ -1,7 +1,8 @@
 SetucoCMSR::Application.routes.draw do
 
   devise_for :accounts, :controllers => {
-    :sessions => 'accounts/sessions'
+    :sessions  => 'accounts/sessions',
+    :passwords => 'accounts/passwords'
   }
   get '/admin' => 'admin/index#index', :as => :account_root
 
@@ -27,7 +28,7 @@ SetucoCMSR::Application.routes.draw do
     resource :site, :only => [:edit, :update]
     resource :account
     resource :ambition, :only => :update
-    resource :goal, :only => [:edit, :update]
+    resources :goals, :only => [:edit, :update]
     get '/logout' => 'login#logout'
     root :to => 'index#index'
   end

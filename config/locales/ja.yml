@@ -51,6 +51,14 @@ ja:
     update:
       complete: 'サイト情報を編集しました。'
 
+  goal:
+    page_count:
+      label: '一ヶ月の新規作成数'
+      presence: '一ヶ月の新規作成数を入力してください。'
+    submit:
+      update: '更新目標を変更'
+    update:
+      complete: '更新目標を変更しました。'
 
   views:
     pagination:
@@ -210,7 +218,7 @@ ja:
       invalid: "は不正な値です。"
       confirmation: "が一致しません。"
       accepted: "を受諾してください。"
-      empty: "を入力してください。"
+      empty: "%{name}を入力してください。"
       blank: "を入力してください。"
       too_long: "は%{count}文字以内で入力してください。"
       too_short: "は%{count}文字以上で入力してください。"
