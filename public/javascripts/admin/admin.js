@@ -23,3 +23,4 @@ function toggleDisplay(idForHide, idForDisplay) {
   $("#" + idForDisplay).css('display','block');
 }
 
+

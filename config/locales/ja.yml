@@ -32,6 +32,29 @@ ja:
   category:
     uncategorized: '未分類'
 
+  page:
+    title:
+      label: 'ページタイトル'
+    category:
+      label: 'カテゴリー'
+    contents:
+      label: 'コンテンツ'
+    outline:
+      label: 'ページの概要'
+    tags:
+      label: 'タグ'
+      note: '（複数指定する場合はカンマ「,」で区切ってください）'
+    created_date:
+      label: '作成日'
+    created_time:
+      label: '作成時刻'
+
+    submit:
+      draftsave_button: '下書きで保存'
+      opensave_button: '公開して保存'
+      created: '新規ページを作成しました。'
+      updated: 'ページを更新しました。'
+
   site:
     name:
       label: 'サイト名'

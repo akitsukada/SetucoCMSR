@@ -3,11 +3,14 @@ class AdminParentController < ApplicationController
   layout 'admin'
   before_filter :authenticate_account!, :init
 
-
   private
   def init
 
     begin
+
+      @add_js = []
+      @add_css = []
+
       # data from config
       @copyright_years = SetucoCMSR::Application.config.years
       @authors = SetucoCMSR::Application.config.authors
@@ -57,5 +60,13 @@ class AdminParentController < ApplicationController
     else
       @subtitle = [subtitle]
     end
+  end
+
+  def add_js js
+    @add_js << js
+  end
+
+  def add_css css
+    @add_css << css
   end
 end

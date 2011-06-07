@@ -25,6 +25,27 @@
   category:
     uncategorized: 'uncategorized'
 
+  page:
+    category:
+      label: 'category'
+    contents:
+      label: 'contents'
+    outline:
+      label: 'outline of this page'
+    tags:
+      label: 'tags'
+      note: '(Separate by the comma)'
+    created_date:
+      label: 'creation date'
+    created_date:
+      label: 'creation time'
+
+    submit:
+      draftsave_button: 'save as draft'
+      opensave_button: 'publish now'
+      created: 'new page was created.'
+      updated: 'this page was updated.'
+
   site:
     name:
       label: "Site's name"

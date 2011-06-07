@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(:version => 20110605142809) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "created_date"
+    t.datetime "created_datetime"
   end
 
   create_table "pages_tags", :id => false, :force => true do |t|

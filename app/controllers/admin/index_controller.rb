@@ -12,7 +12,7 @@ class Admin::IndexController < AdminParentController
     @past_days_from_update = (Time.now.to_date - @last_update.to_date).to_i - 1
     @open_date = Site.all[0].open_date.to_date
     @past_days_from_open = (Time.now.to_date - @open_date).to_i - 1
-    @recent_pages = Page.order('created_date desc')[0..4]
+    @recent_pages = Page.order('created_datetime desc')[0..4]
   end
 
 end

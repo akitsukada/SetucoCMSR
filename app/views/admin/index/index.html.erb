@@ -78,7 +78,7 @@
     </div>
     <% @recent_pages.each do |page| %>
     <dl class="contentsList<%= cycle '',' check' %>">
-        <dt class="pageDate"><%= l page.created_date %></dt>
+        <dt class="pageDate"><%= l page.created_datetime %></dt>
         <dd class="pageTitle">
         <%= link_to page.title, :controller => :pages, :action => :edit, :id => page.id  %>
         </dd>

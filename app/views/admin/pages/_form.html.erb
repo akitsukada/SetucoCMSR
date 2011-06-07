@@ -1,0 +1,57 @@
+<%= form_for @page,:url => :admin_pages do |f| %>
+<%= buttons = capture do %>
+<ul class="inputStraight defaultOver">
+  <li>
+  <%= f.submit t('page.submit.draftsave_button'), :id => 'sub_draft1', :name => 'draft' %>
+  </li>
+  <li>
+  <%= f.submit t('page.submit.opensave_button'), :id => 'sub_open1', :name => 'open' %>
+  </li>
+</ul>
+<% end %>
+<dl id="inputArea">
+  <dt>
+  <%= f.label :title, required_input(t('page.title.label')) %>
+  </dt>
+  <dd>
+  <%= f.text_field :title %>
+  </dd>
+  <dt>
+  <%= f.label :category, t('page.category.label') %>
+  </dt>
+  <dd>
+  <%= f.collection_select :category_id, @categories, :id, :name %>
+  </dd>
+  <dt>
+  <%= f.label :contents, required_input(t('page.contents.label')) %>
+  </dt>
+  <dd>
+  <%= f.text_area :contents %>
+  </dd>
+  <dt>
+  <%= f.label :outline, t('page.outline.label') %>
+  </dt>
+  <dd>
+  <%= f.text_field :outline %>
+  </dd>
+  <dt>
+  <%= f.label :tags, t('page.tags.label') %><%= t('page.tags.note') %>
+  </dt>
+  <dd>
+  <%= f.text_field :tags, :value => @page.tags.select(:name).map {|x| x.name }.join(',') %>
+  </dd>
+  <dt>
+  <%= f.label :created_datetime, t('page.created_date.label') %>
+  </dt>
+  <dd>
+  <%= f.date_select :created_datetime, :use_month_numbers => true, :date_separator => ' / ' %>
+  </dd>
+  <dt>
+  <%= f.label :created_datetime,t('page.created_time.label') %>
+  </dt>
+  <dd>
+  <%= f.time_select :created_datetime %>
+  </dd>
+</dl>
+<%= buttons %>
+<% end %>
