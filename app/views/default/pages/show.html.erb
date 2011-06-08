@@ -15,7 +15,7 @@
         </dd>
     </dl>
     <div class="entryBody">
-        <%= @page.contents %>
+        <%= sanitize_showpage @page.contents %>
         <dl class="entryTag">
             <dt>タグ：</dt>
             <dd>

@@ -2,5 +2,5 @@
  * page/new
  *********************/
 $(document).ready(function() {
-  $("textarea#page_contents").cleditor();
+  $("textarea#admin_page_contents").cleditor();
 });

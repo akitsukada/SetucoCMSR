@@ -27,7 +27,7 @@
       controls:     // controls to add to the toolbar
                     "bold italic underline strikethrough subscript superscript | font size " +
                     "style | color highlight removeformat | bullets numbering | outdent " +
-                    "indent | alignleft center alignright justify | undo redo | " +
+//                    "indent | alignleft center alignright justify | undo redo | " +
                     "rule image link unlink | cut copy paste pastetext | print source",
       colors:       // colors in the color popup
                     "FFF FCC FC9 FF9 FFC 9F9 9FF CFF CCF FCF " +

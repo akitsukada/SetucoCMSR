@@ -45,9 +45,12 @@ ja:
       label: 'タグ'
       note: '（複数指定する場合はカンマ「,」で区切ってください）'
     created_date:
-      label: '作成日'
+      label: '作成日時'
     created_time:
       label: '作成時刻'
+    published:
+      draft: '下書き'
+      open: '公開'
 
     submit:
       draftsave_button: '下書きで保存'

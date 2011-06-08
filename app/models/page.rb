@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   belongs_to :account
   belongs_to :category
 
-  scope :newer10, where(:published => true).order('created_datetime desc').limit(10)
+  scope :newer10, where(:published => true).where("created_datetime <= '#{Time.now.localtime}'").order('created_datetime desc').limit(10)
   scope :uncategorized, where(:category_id => nil)
   scope :default_keyword_search, lambda { |key|
     where("published = 't' and " +

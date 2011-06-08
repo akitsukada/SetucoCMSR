@@ -1,6 +1,12 @@
 <!-- section START -->
 <div class="section">
+    <% if controller.action_name == 'new' %>
     <%= render 'admin/shared/subtitle', :image_path => 'admin/page/h_pageNew.jpg', :image_size => '122x18' %>
+    <% else %>
+    <div class="hAreaText">
+        <h3 id="textType"><%= @section_title %></h3>
+    </div>
+    <% end %>
     <%= render 'admin/shared/notice', :notice => notice if notice %>
     <%= render 'admin/shared/alert', :alert => alert if alert %>
     <%= render 'admin/pages/form' %>

@@ -1,4 +1,4 @@
-<%= form_for @page,:url => :admin_pages do |f| %>
+<%= form_for @page do |f| %>
 <%= buttons = capture do %>
 <ul class="inputStraight defaultOver">
   <li>
@@ -20,7 +20,7 @@
   <%= f.label :category, t('page.category.label') %>
   </dt>
   <dd>
-  <%= f.collection_select :category_id, @categories, :id, :name %>
+  <%= f.collection_select :category_id, @categories, :id, :name, :include_blank => t('category.uncategorized') %>
   </dd>
   <dt>
   <%= f.label :contents, required_input(t('page.contents.label')) %>
@@ -44,13 +44,7 @@
   <%= f.label :created_datetime, t('page.created_date.label') %>
   </dt>
   <dd>
-  <%= f.date_select :created_datetime, :use_month_numbers => true, :date_separator => ' / ' %>
-  </dd>
-  <dt>
-  <%= f.label :created_datetime,t('page.created_time.label') %>
-  </dt>
-  <dd>
-  <%= f.time_select :created_datetime %>
+  <%= f.datetime_select :created_datetime, :use_month_numbers => true, :date_separator => ' / ' %>
   </dd>
 </dl>
 <%= buttons %>

@@ -36,9 +36,12 @@
       label: 'tags'
       note: '(Separate by the comma)'
     created_date:
-      label: 'creation date'
+      label: 'creation datetime'
     created_date:
       label: 'creation time'
+    published:
+      draft: 'draft'
+      open: 'published'
 
     submit:
       draftsave_button: 'save as draft'

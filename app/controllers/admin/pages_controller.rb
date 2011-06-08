@@ -12,7 +12,7 @@ class Admin::PagesController < AdminSharedController
   def create
     begin
       Page.transaction do
-        page = params[:page]
+        page = params[:admin_page]
         tags = page.delete(:tags).split(",")
         tagids = Tag.ids_by_name(tags)
         @page = Page.new(page)
@@ -29,16 +29,31 @@ class Admin::PagesController < AdminSharedController
   def edit
     @page = Page.find(params[:id])
     init_wysiwyg_editor
+    @section_title = "「#{@page.title}#{"（" + t('page.published.draft')+ "）" if !@page.published}」の編集"
     subtitle [
       { :name => "ページの編集・削除", :controller => 'pages', :action => 'index' },
-      { :name => "「#{@page.title}」の編集・削除" },
+      { :name => @section_title },
     ]
     @categories = Category.all
     render 'edit_page'
   end
 
   def update
-    redirect_to :new_admin_page, :notice => t('page.submit.updated')
+    begin
+      Page.transaction do
+        page = params[:admin_page]
+        tags = page.delete(:tags).split(",")
+        tagids = Tag.ids_by_name(tags)
+        @page = Page.find(params[:id])
+        @page.attributes = page
+        @page.published = params[:open] ? true : false
+        @page.tag_ids = tagids
+        @page.save!
+      end
+      redirect_to "/admin/pages/#{@page.id}/edit", :notice => t('page.submit.updated')
+    rescue => e
+      redirect_to "/admin/pages/#{@page.id}/edit", :alert => e.message
+    end
   end
 
   def destroy
