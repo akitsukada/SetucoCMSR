@@ -1,6 +1,14 @@
 # -*- coding:UTF-8 -*-
 class Admin::PagesController < AdminSharedController
 
+  def index
+    subtitle :name => "ページの編集・削除"
+    @pages = Page.order('created_datetime desc').page(params[:page]).per(10)
+    @categories = Category.all
+    @accounts = Account.all
+    add_js 'admin/page'
+  end
+
   def new
     init_wysiwyg_editor
     subtitle :name => "ページの新規作成"
@@ -18,6 +26,7 @@ class Admin::PagesController < AdminSharedController
         @page = Page.new(page)
         @page.published = params[:open] ? true : false
         @page.tag_ids = tagids
+        @page.account_id = current_account.id
         @page.save!
       end
       redirect_to "/admin/pages/#{@page.id}/edit", :notice => t('page.submit.created')

@@ -35,19 +35,37 @@
     tags:
       label: 'tags'
       note: '(Separate by the comma)'
-    created_date:
+    created_datetime:
       label: 'creation datetime'
     created_date:
+      label: 'creation date'
+    created_time:
       label: 'creation time'
     published:
+      label: 'status'
       draft: 'draft'
       open: 'published'
+    author:
+      label: 'Author'
+
+    show: 'Show'
+    cant_show: 'Cannot show draft page'
+
+    search_target:
+      title: 'Title'
+      contents: 'Contents'
+      outline: 'Outline'
+      tags: 'Tags'
+      select_blank: 'No specification'
 
     submit:
       draftsave_button: 'save as draft'
       opensave_button: 'publish now'
+      delete_link: 'Delete'
       created: 'new page was created.'
       updated: 'this page was updated.'
+      update_button: 'update'
+      cancel_button: 'cancel'
 
   site:
     name:

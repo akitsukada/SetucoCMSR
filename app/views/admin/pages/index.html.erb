@@ -1,2 +1,63 @@
-<h1>Admin::Pages#index</h1>
-<p>Find me in app/views/admin/pages/index.html.erb</p>
+<!-- section START -->
+<div class="section">
+
+    <%= render 'admin/shared/subtitle', :image_path => 'admin/page/h_pageAll.jpg', :image_size => '135x18' %>
+    <%= render 'admin/shared/notice', :notice => notice if notice %>
+    <%= render 'admin/shared/alert', :alert => alert if alert %>
+
+    <%= form_tag({:action => :index}, {:method => :get}) do %>
+        <div id="pageSearch">
+            <dl class="over">
+                <dt>
+                <%= label_tag 'query', '検索キーワード' %>
+                </dt>
+                <dd>
+                <%= search_field 'query', 'keyword', :class => 'defaultInput' %>
+                </dd>
+                <dd class="clear">
+                <%= label_tag 'targets_title' do %>
+                <%= check_box :targets, :title, {:class => 'clear', :checked => true}, 'yes', 'no' %><%= t 'page.search_target.title' %>
+                <% end %>
+                </dd>
+                <dd>
+                <%= label_tag 'targets_contents' do %>
+                <%= check_box :targets, :contents, {:class => 'clear', :checked => true}, 'yes', 'no' %><%= t 'page.search_target.contents' %>
+                <% end %>
+                </dd>
+                <dd>
+                <%= label_tag 'targets_outline' do %>
+                <%= check_box :targets, :outline, {:class => 'clear', :checked => true}, 'yes', 'no' %><%= t 'page.search_target.outline' %>
+                <% end %>
+                </dd>
+                <dd>
+                <%= label_tag 'targets_tags' do %>
+                <%= check_box :targets, :tags, {:class => 'clear', :checked => true}, 'yes', 'no' %><%= t 'page.search_target.tags' %>
+                <% end %>
+                </dd>
+            </dl>
+            <dl class="under">
+                <dt><%= t 'page.category.label' %></dt>
+                <dd>
+                <%= collection_select :page, :category_id, @categories, :id, :name, :include_blank => t('page.search_target.select_blank') %>
+                </dd>
+                <dt><%= t 'page.author.label' %></dt>
+                <dd>
+                <%= collection_select :page, :account_id, @accounts, :id, :email, :include_blank => t('page.search_target.select_blank') %>
+                </dd>
+                <dt><%= t 'page.published.label' %></dt>
+                <dd>
+                <%= select :page, :published,
+                t('page.search_target.select_blank') => :no_specification,
+                t('page.published.draft') => false,
+                t('page.published.open') => true %>
+                </dd>
+            </dl>
+            <p>
+            <%= submit_tag '検索', :id => :sub_search, :name => :sub_search, :disable_with => '検索中です...' %>
+            </p>
+        </div>
+    <% end %>
+    <%= render :partial => 'admin/pages/pages', :locals => {:pages => @pages} %>
+    <%= paginate @pages %>
+</div>
+<!-- section END -->

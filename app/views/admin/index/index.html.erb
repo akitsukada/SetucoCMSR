@@ -85,7 +85,7 @@
         <dt>カテゴリー</dt>
         <dd><%= page.category.nil? ? '未分類' : page.category.name %></dd>
         <dt>制作者</dt>
-        <dd><%= page.account.nickname %></dd>
+        <dd><%= page.account ? page.account.email : '???' %></dd>
         <dt>公開状態</dt>
         <dd><%= page.published ? '公開' : '下書き' %></dd>
     </dl>

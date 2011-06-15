@@ -1,0 +1,55 @@
+<td>
+    <% if page.published %>
+    <%= link_to image_tag('admin/page/btn_check.png', :alt => t('page.show'), :size => '27x27'), page  %>
+    <% else %>
+    <%= image_tag('admin/page/btn_check_no.png', :alt => t('page.cant_show'), :size => '27x27') %>
+    <% end %>
+</td>
+<td>
+    <%= link_to page.title, :controller => :pages, :action => :edit, :id => page.id %>
+</td>
+<td>
+    <%= l page.created_datetime.to_date %>
+</td>
+<td>
+    <%= page.account.email if page.account %>
+</td>
+<td>
+    <%= form_tag do %>
+    <p>
+    <%= collection_select :page, :category_id, @categories, :id, :name, :include_blank => t('page.search_target.select_blank'), :selected => page.category ? page.category.id : nil %>
+    </p>
+    <p class="category_edit">
+    <%= submit_tag t 'page.submit.update_button' %>
+    <%= submit_tag t('page.submit.cancel_button'), :type => :button, :onclick => 'hideButtons(this)' %>
+    </p>
+    <% end %>
+</td>
+<td>
+    <%= form_tag do %>
+    <p>
+    </p>
+    <p class="category_edit">
+    <%= submit_tag t 'page.submit.update_button' %>
+    <%= submit_tag t('page.submit.cancel_button'), :type => :button, :onclick => 'hideButtons(this)' %>
+    </p>
+    <% end %>
+    <form id="page_status_form<?php echo $this->index ?>" enctype="application/x-www-form-urlencoded" method="post" action="<?php echo $statusForm->getAction() ?>">
+        <p>
+            <?php echo $statusForm->getElement('status')->setValue($this->page['status']) ?>
+            <?php echo $statusForm->getElement('h_page_id_s')->setValue($this->page['id']) ?>
+            <?php echo $statusForm->getElement('h_page_title_s')->setValue($this->page['title']) ?>
+            <?php echo $statusForm->getElement('h_pre_category_id_s') . "\n" ?>
+        </p>
+        <p class="status_edit">
+            <?php echo $statusForm->getElement('sub_status') ?>
+            <?php echo $statusForm->getElement('cancel_status') ."\n" ?>
+        </p>
+    </form>
+</td>
+<td>
+    <a href="javascript:void(0)" onclick="confirmDeleteRedirect('<?php echo $this->baseUrl("/admin/page/delete/id/{$this->page['id']}") ?>', '<?php echo $this->escape($this->page['title']) ?>');">
+        <img src="<?php echo $this->baseUrl('/images/admin/share/btn_delete.png') ?>" alt="削除" width="27" height="27" />
+    </a>
+</td>
+

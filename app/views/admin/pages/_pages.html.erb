@@ -1,0 +1,39 @@
+<table summary="ページ一覧の表です。タイトルのリンクと編集ボタンから、ページの編集ができます。削除ボタンから削除ができます。" cellpadding="0" cellspacing="0">
+    <colgroup>
+        <col width="7%" />
+        <col width="35%" />
+        <col width="16%" />
+        <col width="10%" />
+        <col width="15%" />
+        <col width="10%" />
+        <col width="7%" />
+    </colgroup>
+    <thead>
+        <tr>
+            <th scope="col" id="tableFirst"><%= t 'page.show' %></th>
+            <th scope="col"><%= t('page.title.label') %>
+                <%= link_to image_tag('admin/share/btn_sort_descending.gif', :alt => '降順に並び替え', :size => '15x15'),
+                    :action => :index, :sort => :title, :order => :desc %>
+                <%= link_to image_tag('admin/share/btn_sort_ascending.gif', :alt => '昇順に並び替え', :size => '15x15'),
+                    :action => :index, :sort => :title, :order => :asc %>
+            </th>
+            <th scope="col"><%= t('page.created_date.label') %>
+                <%= link_to image_tag('admin/share/btn_sort_descending.gif', :alt => '降順に並び替え', :size => '15x15'),
+                    :action => :index, :sort => :created_datetime, :order => :desc %>
+                <%= link_to image_tag('admin/share/btn_sort_ascending.gif', :alt => '昇順に並び替え', :size => '15x15'),
+                    :action => :index, :sort => :created_datetime, :order => :asc %>
+            </th>
+            <th scope="col"><%= t 'page.author.label' %></th>
+            <th scope="col"><%= t 'page.category.label' %></th>
+            <th scope="col"><%= t 'page.published.label' %></th>
+            <th scope="col"><%= t 'page.submit.delete_link' %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% pages.each do |p| %>
+        <tr<%= cycle '', ' class="check"' %>>
+            <%= render 'admin/pages/pages-row', :page => p %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

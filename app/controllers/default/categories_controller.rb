@@ -12,8 +12,6 @@ class Default::CategoriesController < DefaultParentController
       @total_count = @category.pages.count
       @category_name = @category.name
     end
-    end
     set_subtitle "「#{@category_name}」カテゴリーのページ"
   end
-
 end

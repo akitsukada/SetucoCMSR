@@ -15,6 +15,6 @@
         <%= link_to 'ログアウト', :controller => 'accounts/sessions', :action => 'destroy' %>
     </li>
     <li id="utilAccount">
-    <span><%= @login_user %></span>でログイン中
+    <span><%= current_account.email %></span>でログイン中
     </li>
 </ul>

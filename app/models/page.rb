@@ -6,6 +6,7 @@ class Page < ActiveRecord::Base
 
   scope :newer10, where(:published => true).where("created_datetime <= '#{Time.now.localtime}'").order('created_datetime desc').limit(10)
   scope :uncategorized, where(:category_id => nil)
+  # TODO: 全文検索導入
   scope :default_keyword_search, lambda { |key|
     where("published = 't' and " +
           "(title like ? or contents like ? or outline like ? or exists " +

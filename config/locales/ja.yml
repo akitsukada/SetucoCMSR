@@ -44,19 +44,37 @@ ja:
     tags:
       label: 'タグ'
       note: '（複数指定する場合はカンマ「,」で区切ってください）'
-    created_date:
+    created_datetime:
       label: '作成日時'
+    created_date:
+      label: '作成日'
     created_time:
       label: '作成時刻'
     published:
+      label: '公開状態'
       draft: '下書き'
       open: '公開'
+    author:
+      label: '製作者'
+
+    show: '表示'
+    cant_show: '下書きは表示できません'
+
+    search_target:
+      title: 'タイトル'
+      contents: '本文'
+      outline: '概要'
+      tags: 'タグ'
+      select_blank: ' --指定なし-- '
 
     submit:
       draftsave_button: '下書きで保存'
       opensave_button: '公開して保存'
+      delete_link: '削除'
       created: '新規ページを作成しました。'
       updated: 'ページを更新しました。'
+      update_button: '変更'
+      cancel_button: 'キャンセル'
 
   site:
     name:
